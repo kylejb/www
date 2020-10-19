@@ -73,3 +73,28 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul {
 h1 {
 	font-weight: 900;
 }
+
+.content-grid {
+	margin: 0 auto;
+	width: calc(100% - 5rem); // mobile
+
+	@include breakpoint-medium-up {
+		width: calc(100% - 5rem);
+	}
+
+	@include breakpoint-large-up {
+		width: calc(100% - 10rem);
+	}
+
+	@include breakpoint-xlarge-up {
+		width: calc(100% - 20rem);
+	}
+}
+
+::-webkit-scrollbar { 
+	display: none; 
+}
+
+a {
+	text-decoration: none;
+}
