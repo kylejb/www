@@ -18,6 +18,7 @@ const LandingPage = (props, context) => {
           <div className="tagline">
             Full Stack Dev | Open-Source Enthusiast | Blogger | Avid Surfer
           </div>
+            <SocialIcons />
         </div>
       </main>
       <ScrollToNext pageSelector=".portfolio-item" />
