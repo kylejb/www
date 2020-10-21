@@ -1,6 +1,25 @@
 import React from 'react';
 
 export default [{
+  name: 'TheCommuter',
+  render: (
+    <div className='portfolio-item'>
+      <div className='portfolio-item__title'>
+        Commuter
+      </div>
+      <div className='portfolio-item__desc'>
+        Access upcoming MTA arrival times at your favorite station.  
+      </div>
+      <div className='portfolio-item__icon'>
+        <a target="_blank" rel="noopener noreferrer" href="https://sqlite.org"><i className="fas fa-database"></i></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.ruby-lang.org/en/"><i className="fas fa-gem"></i></a>
+      </div>
+      <div className='portfolio-item__links'>
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/kylejb/nyc-mta-station-arrival-feed">Backend</a>
+      </div>
+    </div>
+  )
+}, {
   name: 'JobMate',
   render: (
     <div className='portfolio-item'>
@@ -11,8 +30,8 @@ export default [{
         A better way to find and apply to jobs. 
       </div>
       <div className='portfolio-item__icon'>
-      <a target="_blank" rel="noopener noreferrer" href="https://sqlite.org"><i className="fas fa-database"></i></a>
-      <a target="_blank" rel="noopener noreferrer" href="https://rubyonrails.org"><i className="fas fa-gem"></i></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://sqlite.org"><i className="fas fa-database"></i></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://rubyonrails.org"><i className="fas fa-gem"></i></a>
       </div>
       <div className='portfolio-item__links'>
         <a target="_blank" rel="noopener noreferrer" href="https://github.com/kylejb/JobMate">Fullstack</a>
@@ -30,9 +49,9 @@ export default [{
         Simplifying remote learning with Zoom API integration. 
       </div>
       <div className='portfolio-item__icon'>
-      <a target="_blank" rel="noopener noreferrer" href="https://www.postgresql.org"><i className="fas fa-database"></i></a>
-      <a target="_blank" rel="noopener noreferrer" href="https://rubyonrails.org"><i className="fas fa-gem"></i></a>
-      <a target="_blank" rel="noopener noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/javascript"><i className="fab fa-js"></i></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.postgresql.org"><i className="fas fa-database"></i></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://rubyonrails.org"><i className="fas fa-gem"></i></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/javascript"><i className="fab fa-js"></i></a>
       </div>
       <div className='portfolio-item__links'>
         <a target="_blank" rel="noopener noreferrer" href="https://github.com/kylejb/classzoom_backend">Backend</a>
@@ -51,9 +70,9 @@ export default [{
         Aggregating buoy and crowdsourced data for surfers.
       </div>
       <div className='portfolio-item__icon'>
-      <a target="_blank" rel="noopener noreferrer" href="https://www.postgresql.org"><i className="fas fa-database"></i></a>
-      <a target="_blank" rel="noopener noreferrer" href="https://rubyonrails.org"><i className="fas fa-gem"></i></a>
-      <a target="_blank" rel="noopener noreferrer" href="https://reactjs.org"><i className="fab fa-react"></i></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.postgresql.org"><i className="fas fa-database"></i></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://rubyonrails.org"><i className="fas fa-gem"></i></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://reactjs.org"><i className="fab fa-react"></i></a>
       </div>
       <div className='portfolio-item__links'>
         <a target="_blank" rel="noopener noreferrer" href="https://github.com/kylejb/capstone-project_backend">Backend</a>
