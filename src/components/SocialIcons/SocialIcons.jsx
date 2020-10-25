@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../../ThemeContext';
 import PropTypes from 'prop-types';
 
 import './style.scss';
 
-const SocialIcons = (props, context) => {
-  const { theme: { colorPrimary } } = context;
+const SocialIcons = (props) => {
+  const theme = useContext(ThemeContext);
+  const { currentTheme: { colorPrimary } } = theme;
   
   return (
     <div className="social-icons animate-icons">
@@ -20,7 +22,7 @@ const SocialIcons = (props, context) => {
   );
 };
 
-SocialIcons.contextTypes = {
+SocialIcons.propTypes = {
   theme: PropTypes.any
 };
 

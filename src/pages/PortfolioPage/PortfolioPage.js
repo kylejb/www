@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import PortfolioCard from '../../components/PortfolioItem/PortfolioCard';
 // import ScrollToPrevious from '@components/ScrollToPrevious';
 // import PortfolioItems from './portfolio-items';
 import { projects } from './projects'
-
 import './style.scss';
 
+import { ThemeContext } from '../../ThemeContext';
+
+// This component displays name from Context
+
+
+
 const PortfolioPage = (props, context) => {
-  const {
-    theme: { colorPrimary, colorAlternate, textAlternate, bgPrimary }
-  } = context;
-  console.log(context)
+
+  const theme = useContext(ThemeContext);
+  const { colorPrimary, colorAlternate, textAlternate, bgPrimary } = theme;
+
   return (
     <div className="portfolio-page" style={{ backgroundColor: bgPrimary }}>
       <div className="content-grid">
@@ -47,7 +52,7 @@ const PortfolioPage = (props, context) => {
   );
 };
 
-PortfolioPage.contextTypes = {
+PortfolioPage.propTypes = {
   theme: PropTypes.any
 };
 
