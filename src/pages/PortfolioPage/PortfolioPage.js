@@ -3,19 +3,18 @@ import PropTypes from 'prop-types';
 import PortfolioCard from '../../components/PortfolioItem/PortfolioCard';
 // import ScrollToPrevious from '@components/ScrollToPrevious';
 // import PortfolioItems from './portfolio-items';
+import { ThemeContext } from '../../ThemeContext';
 import { projects } from './projects'
 import './style.scss';
 
-import { ThemeContext } from '../../ThemeContext';
 
 // This component displays name from Context
 
 
 
-const PortfolioPage = (props, context) => {
-
+const PortfolioPage = ( props ) => {
   const theme = useContext(ThemeContext);
-  const { colorPrimary, colorAlternate, textAlternate, bgPrimary } = theme;
+  const { currentTheme: {colorPrimary, colorAlternate, textAlternate, bgPrimary } } = theme;
 
   return (
     <div className="portfolio-page" style={{ backgroundColor: bgPrimary }}>
