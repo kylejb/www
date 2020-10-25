@@ -22,7 +22,7 @@ const LandingPage = (props) => {
             <SocialIcons />
         </div>
       </main>
-      <ScrollToNext pageSelector=".portfolio-item" />
+      <ScrollToNext pageSelector=".portfolio-page" />
     </div>
   );
 };
