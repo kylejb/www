@@ -3,7 +3,7 @@ import PortfolioItem from '../../components/PortfolioItem/index';
 
 const PortfolioItems = () => {
   const [ open, setOpen ] = useState(false);
-  const cardClassName = 'portfolio-item' + (open ? ' portfolio-item--open' : '');
+  const cardClassName = 'portfolio-card' + (open ? ' portfolio-card--open' : ' portfolio-card');
 
   const items = [{
     name: 'JobMate',
@@ -32,7 +32,7 @@ const PortfolioItems = () => {
     render: (
       <div 
         className={cardClassName}
-        onClick={() => setOpen(!open)}
+        // onClick={() => setOpen(!open)}
       >        
       <div className='portfolio-item__title'>
           ClassZoom
@@ -56,7 +56,7 @@ const PortfolioItems = () => {
     render: (
       <div 
         className={cardClassName}
-        onClick={() => setOpen(!open)}
+        // onClick={() => setOpen(!open)}
       >
         <div className='portfolio-item__title'>
           clairBuoyant

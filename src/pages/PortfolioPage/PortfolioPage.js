@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PortfolioItem from '../../components/PortfolioItem/index';
+import PortfolioCard from '../../components/PortfolioItem/PortfolioCard';
 // import ScrollToPrevious from '@components/ScrollToPrevious';
-import PortfolioItems from './portfolio-items';
+// import PortfolioItems from './portfolio-items';
+import { projects } from './projects'
 
 import './style.scss';
 
@@ -10,7 +11,7 @@ const PortfolioPage = (props, context) => {
   const {
     theme: { colorPrimary, colorAlternate, textAlternate, bgPrimary }
   } = context;
-
+  console.log(context)
   return (
     <div className="portfolio-page" style={{ backgroundColor: bgPrimary }}>
       <div className="content-grid">
@@ -18,22 +19,27 @@ const PortfolioPage = (props, context) => {
         <div className="portfolio-wrapper">
           <style jsx="true">
             {`
-              .portfolio-item {
+              .portfolio-card {
                 background-color: ${colorPrimary};
                 color: ${textAlternate};
               }
-              .portfolio-item a {
+              .portfolio-card a:hover {
                 color: ${textAlternate};
               }
-              .portfolio-item__links a:hover {
+              .portfolio-item__icon a:hover {
+                border-bottom: 2px solid ${colorAlternate};
+              }
+
+              .portfolio-item__links a {
                 border-bottom: 2px solid ${colorAlternate};
               }
             `}
           </style>
-          <PortfolioItems />
-          {/* {PortfolioItems.map((item, i) => (
-            <PortfolioItem render={item.render} key={i} />
-          ))} */}
+            {projects.map((project) => (
+              // <div className='portfolio-card-body'>
+                <PortfolioCard project={project} key={project.id} />
+              // </div>
+            ))}
         </div>
       </div>
       {/* <ScrollToPrevious pageSelector=".about-page" /> */}
