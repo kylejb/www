@@ -8,10 +8,6 @@ import { projects } from './projects'
 import './style.scss';
 
 
-// This component displays name from Context
-
-
-
 const PortfolioPage = ( props ) => {
   const theme = useContext(ThemeContext);
   const { currentTheme: {colorPrimary, colorAlternate, textAlternate, bgPrimary } } = theme;
