@@ -4,7 +4,6 @@
 $border-radius: 2px;
 
 .portfolio-card {
-  
   .portfolio-card-content {
     perspective: 1000px;
     display: flex;
@@ -24,59 +23,117 @@ $border-radius: 2px;
     &:hover {
       box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2);
     }
-    .portfolio-card-content--front {
-      
-      &__title {
-        flex: 1;
-        padding: 1rem 1.5rem;
-        font-size: 1.125rem;
-        font-weight: 400;
-        text-align: center;
-        
-        @include breakpoint-small-down {
-          font-size: 1.25rem;
-        }
-      }
-      
-      &__desc {
-        display: flex;
-        flex-direction: column;
-        padding: 0 0.5rem;
-        font-size: 0.75rem;
-        font-weight: 400;
-        text-align: center;
-        line-height: 1.25rem;
-        
-        @include breakpoint-small-down {
-          font-size: 0.875rem;
-        }
-      }
-      
-      &__icon {
-        padding: 1rem 0;
-        font-size: 1.5rem;
-        font-weight: 100;
-        text-align: center;
-
-        svg {
-          margin: 0 0.25rem;
-        }
-      }
-      
-      &__links {
-        padding: 0 0 0.75rem;
-        display: flex;
-        justify-content: space-around;
-        font-size: 0.875rem;
-        font-weight: 400;
-        
-        a {
-          padding-bottom: 0.25rem;
-          border-bottom: 2px solid inherit;
+    .portfolio-card-content {
+      &--front {
+        &__title {
+          flex: 1;
+          padding: 1rem 1.5rem;
+          font-size: 1.125rem;
+          font-weight: 400;
+          text-align: center;
           
-          &:hover {
-            cursor: pointer;
+          @include breakpoint-small-down {
+            font-size: 1.25rem;
+          }
+        }
+        
+        &__desc {
+          display: flex;
+          flex-direction: column;
+          padding: 0 0.5rem;
+          font-size: 0.75rem;
+          font-weight: 400;
+          text-align: center;
+          line-height: 1.25rem;
+          
+          @include breakpoint-small-down {
+            font-size: 0.875rem;
+          }
+        }
+        
+        &__icon {
+          padding: 1rem 0;
+          font-size: 1.5rem;
+          font-weight: 100;
+          text-align: center;
+
+          svg {
+            margin: 0 0.25rem;
+          }
+        }
+        
+        &__links {
+          padding: 0 0 0.75rem;
+          display: flex;
+          justify-content: space-around;
+          font-size: 0.875rem;
+          font-weight: 400;
+          
+          a {
+            padding-bottom: 0.25rem;
             border-bottom: 2px solid inherit;
+            
+            &:hover {
+              cursor: pointer;
+              border-bottom: 2px solid inherit;
+            }
+          }
+        }
+      }
+      
+      &--back {
+        &__title {
+          flex: 1;
+          padding: 1rem 1.5rem;
+          font-size: 1.125rem;
+          font-weight: 400;
+          text-align: center;
+          
+          @include breakpoint-small-down {
+            font-size: 1.25rem;
+          }
+        }
+        
+        &__desc {
+          display: flex;
+          flex-direction: column;
+          padding: 0 0.5rem;
+          font-size: 0.75rem;
+          font-weight: 400;
+          text-align: center;
+          line-height: 1.25rem;
+          
+          @include breakpoint-small-down {
+            font-size: 0.875rem;
+          }
+        }
+        
+        &__icon {
+          padding: 1rem 0;
+          font-size: 1.5rem;
+          font-weight: 100;
+          text-align: center;
+
+          svg {
+            margin: 0 0.25rem;
+          }
+        }
+        
+        &__links {
+          padding: 0 0 0.75rem;
+          display: flex;
+          justify-content: space-around;
+          font-size: 0.875rem;
+          font-weight: 400;
+          
+          a {
+            padding-bottom: 0.25rem;
+            border-bottom: 2px solid inherit;
+            
+            &:hover {
+              cursor: pointer;
+              border-bottom: 2px solid inherit;
+            }
           }
         }
       }
