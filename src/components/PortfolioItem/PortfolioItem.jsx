@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import { ThemeContext } from '../../ThemeContext';
 import './style.scss';
 
-const PortfolioItem = (props, context) => {
-  const { theme: { colorPrimary, textAlternate } } = context;
+const PortfolioItem = ( props ) => {
+  const theme = useContext(ThemeContext);
+  const { currentTheme: { colorPrimary, textAlternate } } = theme;
 
   if (props.render) return props.render;
   else
@@ -30,7 +32,7 @@ const PortfolioItem = (props, context) => {
     );
 };
 
-PortfolioItem.contextTypes = {
+PortfolioItem.propTypes = {
   theme: PropTypes.any
 };
 
