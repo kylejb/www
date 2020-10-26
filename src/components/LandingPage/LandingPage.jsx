@@ -6,7 +6,7 @@ import ScrollToNext from '../ScrollToNext/index';
 
 import './style.scss';
 
-const LandingPage = (props) => {
+const LandingPage = () => {
   const theme = useContext(ThemeContext);
 
   const { currentTheme: { bgPrimary, colorPrimary } } = theme;

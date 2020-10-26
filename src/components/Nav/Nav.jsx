@@ -5,7 +5,7 @@ import { toElement as scrollToElement } from '../../utils/scroll';
 import './style.scss';
 
 
-const Nav = ( props ) => {
+const Nav = () => {
   const theme = useContext(ThemeContext);
   const { currentTheme: { colorPrimary, bgPrimary, navAlpha }, switchTheme } = theme;
 
@@ -43,19 +43,14 @@ const Nav = ( props ) => {
         setIsSticky(false);
       }
       prevScrollY.current = currentScrollY;
-      //! console.log(goingUp, currentScrollY);
     };
     
     window.addEventListener("scroll", handleScroll, { passive: true });
     
     return () => window.removeEventListener("scroll", handleScroll);
   }, [goingUp, nav]);
+ 
   
-  //! if (nav.current) {
-  //!   console.log("nav render window offset ", nav.current.getBoundingClientRect().height)
-  //! } 
-
-
   return (
     <nav
       ref={nav}

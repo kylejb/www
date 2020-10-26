@@ -8,9 +8,10 @@ import { projects } from './projects'
 import './style.scss';
 
 
-const PortfolioPage = ( props ) => {
+const PortfolioPage = () => {
   const theme = useContext(ThemeContext);
   const { currentTheme: {colorPrimary, colorAlternate, textAlternate, bgPrimary } } = theme;
+
 
   return (
     <div className="portfolio-page" style={{ backgroundColor: bgPrimary }}>
@@ -19,24 +20,18 @@ const PortfolioPage = ( props ) => {
         <div className="portfolio-wrapper">
           <style jsx="true">
             {`
-              .portfolio-card {
+              .portfolio-card-content, .portfolio-card-content a {
                 background-color: ${colorPrimary};
                 color: ${textAlternate};
               }
-              .portfolio-card a:hover {
-                color: ${textAlternate};
-              }
-              .portfolio-item__icon a:hover {
+              .portfolio-card-content a:hover {
+                color: ${'#ffb727'};
                 border-bottom: 2px solid ${colorAlternate};
-              }
-
-              .portfolio-item__links a {
-                border-bottom: 2px solid ${colorAlternate};
-              }
+              }              
             `}
           </style>
             {projects.map((project) => (
-              // <div className='portfolio-card-body'>
+              // <div className='portfolio-card-content'>
                 <PortfolioCard project={project} key={project.id} />
               // </div>
             ))}

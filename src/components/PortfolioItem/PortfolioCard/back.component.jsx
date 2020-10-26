@@ -1,14 +1,15 @@
 import React from 'react';
 
-const PortfolioCardBack = (props) => {
+const PortfolioCardBack = (props) => {    
+    const cardSubClassName = props.class;
 
     
     return(
-        <div className={'portfolio-card--back'}>
-            <div className='portfolio-item__title'>
-                    {props.project.title}
+        <>
+            <div className={`${cardSubClassName}__title`}>
+                {props.project.title}
             </div>
-        </div>
+        </>
     )
 }
 
