@@ -31,9 +31,7 @@ const PortfolioPage = () => {
             `}
           </style>
             {projects.map((project) => (
-              // <div className='portfolio-card-content'>
                 <PortfolioCard project={project} key={project.id} />
-              // </div>
             ))}
         </div>
       </div>
