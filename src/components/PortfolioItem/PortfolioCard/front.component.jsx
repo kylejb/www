@@ -1,23 +1,23 @@
 import React from 'react';
 
 const PortfolioCardFront = (props) => {
-    const cardSubClassName = props.class;
+    const cardClassName = props.class;
 
     return(     
         <>       
-            <div className={`${cardSubClassName}__title`}>
+            <div className={`${cardClassName}__title`}>
                     {props.project.title}
             </div>
 
-            <div className={`${cardSubClassName}__desc`}>
+            <div className={`${cardClassName}__desc`}>
                 {props.project.desc}
             </div>
 
-            <div className={`${cardSubClassName}__icon`}>
+            <div className={`${cardClassName}__icon`}>
                 {props.project.icons.map(icon => <a target="_blank" rel="noopener noreferrer" href={icon.link} key={icon.id}><i className={icon.classname}></i></a>)}
             </div>
 
-            <div className={`${cardSubClassName}__links`}>
+            <div className={`${cardClassName}__links`}>
                 { props.project.github.link.length > 1 ? 
                         props.project.github.link.map(repo => {
                             return <a key={repo.label} target="_blank" rel="noopener noreferrer" href={repo.link}>{repo.label}</a> 

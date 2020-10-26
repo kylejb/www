@@ -5,7 +5,7 @@ import './style.scss';
 
 const PortfolioCard = (props) => {
     const [ flip, setFlip ] = useState(false);
-    const cardSubClassName = (flip ? 'portfolio-card-content--back' : 'portfolio-card-content--front');
+    const cardClassName = (flip ? 'portfolio-card-content--back' : 'portfolio-card-content--front');
 
 
     return(
@@ -13,8 +13,8 @@ const PortfolioCard = (props) => {
           className='portfolio-card'
           onClick={() => setFlip(!flip)}
         >
-            <div className='portfolio-card-content'>
-                { flip ? <PortfolioCardBack project={props.project} class={cardSubClassName} /> : <PortfolioCardFront project={props.project} class={cardSubClassName} />}
+            <div className={cardClassName}>
+                { flip ? <PortfolioCardBack project={props.project} class={cardClassName} /> : <PortfolioCardFront project={props.project} class={cardClassName} />}
             </div>
         </div>
     );

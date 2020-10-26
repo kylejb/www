@@ -1,12 +1,12 @@
 import React from 'react';
 
 const PortfolioCardBack = (props) => {    
-    const cardSubClassName = props.class;
+    const cardClassName = props.class;
 
     
     return(
         <>
-            <div className={`${cardSubClassName}__title`}>
+            <div className={`${cardClassName}__title`}>
                 {props.project.title}
             </div>
         </>
