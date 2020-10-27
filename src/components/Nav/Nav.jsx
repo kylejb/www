@@ -24,7 +24,7 @@ const Nav = () => {
   const scrollToPage = (pageSelector) => {
     const nextPage = document.querySelector(pageSelector);
     scrollToElement(nextPage);
-  }
+  };
 
 
   useEffect(() => {
@@ -84,11 +84,13 @@ const Nav = () => {
       </div>
     </nav>
   );
-}
+};
+
 
 Nav.propType = {
   currentTheme: PropTypes.any,
   switchTheme: PropTypes.func
 };
+
 
 export default Nav;
