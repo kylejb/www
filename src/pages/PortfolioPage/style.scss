@@ -1,5 +1,6 @@
 @import '../../styles/_breakpoints.scss';
 
+
 .portfolio-page {
   padding-top: 2rem;
   min-height: 100vh;
@@ -27,7 +28,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    position: relative;
 
     @include breakpoint-small-down {
       flex-direction: column;
