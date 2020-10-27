@@ -131,6 +131,7 @@ export const themes = [
       navAlpha: 'rgba(69, 90, 100, 0.75)'
     }
   ];
+  
 
 export const getThemes = () => {
   return themes.map((theme) => {
@@ -150,4 +151,4 @@ export const getThemes = () => {
       navAlpha: theme.navAlpha
     };
   });
-}
+};

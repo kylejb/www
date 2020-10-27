@@ -1,13 +1,16 @@
 import React, { createContext, useState} from 'react';
 import { getThemes } from './themes';
 
+
 export const ThemeContext = createContext();
+
 
 export const ThemeProvider = ({ children }) => {
     const firstTimeThemes = getThemes().filter(theme => theme.firstTime === true), 
           setFirstTimeTheme = firstTimeThemes[Math.floor((Math.random() * (firstTimeThemes.length)))]
     const [currentTheme, setCurrentTheme] = useState(setFirstTimeTheme);
   
+    
     const getRandomTheme = () => {
       const allThemes = getThemes();
       const themesWithoutCurrentTheme = allThemes.filter(
@@ -24,6 +27,7 @@ export const ThemeProvider = ({ children }) => {
       setCurrentTheme(randomTheme);
     }
 
+
     return (
       <ThemeContext.Provider
         value={{
@@ -34,4 +38,4 @@ export const ThemeProvider = ({ children }) => {
         {children}
       </ThemeContext.Provider>
     );
-}
+};

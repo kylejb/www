@@ -1,10 +1,11 @@
 import React from 'react';
 import Nav from './components/Nav/index';
 import LandingPage from './components/LandingPage/index';
-// import AboutPage from '@pages/AboutPage';
 import PortfolioPage from './pages/PortfolioPage/index';
-// import Footer from '@components/Footer';
-// import ScrollTop from '/components/ScrollTop/index';
+// import AboutPage from './pages/AboutPage';
+// import Footer from './components/Footer';
+// import ScrollTop from './components/ScrollTop/index';
+
 
 const App = () => {
  
@@ -13,12 +14,10 @@ const App = () => {
     <div className="dev-landing-page">
         <Nav />
         <LandingPage />
-        {/* <AboutPage /> */}
         <PortfolioPage />
-        {/* <ScrollTop /> */}
-        {/* <Footer /> */}
     </div>
   );
 }
+
 
 export default App;

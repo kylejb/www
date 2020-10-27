@@ -3,13 +3,14 @@ import { ThemeContext } from '../../ThemeContext';
 import PropTypes from 'prop-types';
 import SocialIcons from '../SocialIcons/index';
 import ScrollToNext from '../ScrollToNext/index';
-
 import './style.scss';
+
 
 const LandingPage = () => {
   const theme = useContext(ThemeContext);
 
   const { currentTheme: { bgPrimary, colorPrimary } } = theme;
+
 
   return (
     <div style={{ backgroundColor: bgPrimary }} className="landing-page">
@@ -27,8 +28,10 @@ const LandingPage = () => {
   );
 };
 
+
 LandingPage.propTypes = {
   theme: PropTypes.any
 };
+
 
 export default LandingPage;

@@ -13,7 +13,7 @@ const ScrollToNext = (props) => {
     const { pageSelector } = props;
     const nextPage = document.querySelector(pageSelector);
     scrollToElement(nextPage);
-  }
+  };
   
 
   return (
@@ -24,11 +24,13 @@ const ScrollToNext = (props) => {
       </div>
     </div>
   );
-}
+};
+
 
 ScrollToNext.propTypes = {
   pageSelector: PropTypes.string,
   currentTheme: PropTypes.any
 };
+
 
 export default ScrollToNext;
