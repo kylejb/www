@@ -1,35 +1,36 @@
-import React, { Component } from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import { ThemeContext } from '../../ThemeContext';
 import { toElement as scrollToElement } from '../../utils/scroll';
-
 import './style.scss';
 
-class ScrollToNext extends Component {
-  scrollToNext() {
-    const { pageSelector } = this.props;
+
+const ScrollToNext = (props) => {
+  const theme = useContext(ThemeContext);
+  const { currentTheme: { colorPrimary } } = theme;
+
+  const scrollToNext = () => {
+    const { pageSelector } = props;
     const nextPage = document.querySelector(pageSelector);
     scrollToElement(nextPage);
-  }
+  };
+  
 
-  render() {
-    const { theme: { colorPrimary } } = this.context;
-    return (
-      <div className="scroll-to-next" onClick={(e) => this.scrollToNext()}>
-        <div className="arrow bounce" style={{ color: colorPrimary }}>
-          <div className="scroll-text">Click Me</div>
-          <button className="fas fa-chevron-down fa-2x" href="#" />
-        </div>
+  return (
+    <div className="scroll-to-next" onClick={(e) => scrollToNext()} aria-label="Click me to view next section">
+      <div className="arrow bounce" style={{ color: colorPrimary }}>
+        <div className="scroll-text">Click Me</div>
+        <button className="fas fa-chevron-down fa-2x" href="#" />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
 
 ScrollToNext.propTypes = {
-  pageSelector: PropTypes.string
+  pageSelector: PropTypes.string,
+  currentTheme: PropTypes.any
 };
 
-ScrollToNext.contextTypes = {
-  theme: PropTypes.any
-};
 
 export default ScrollToNext;

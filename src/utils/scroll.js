@@ -38,9 +38,3 @@ export const toElement = (element) => {
     }
   }
 };
-
-export default {
-  toTop,
-  to,
-  toElement
-};

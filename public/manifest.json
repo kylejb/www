@@ -1,6 +1,6 @@
 {
-  "short_name": "Kyle's Page",
-  "name": "@Kyle's Page",
+  "short_name": "Kyle's Portfolio",
+  "name": "Kyle's Portfolio",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",

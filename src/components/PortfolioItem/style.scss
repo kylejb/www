@@ -1,38 +1,171 @@
 @import '../../styles/_breakpoints.scss';
 
+
 $border-radius: 2px;
+$card-size: 25rem;
+$flip-duration: 1s;
+$perspective: 1000px;
+$degree: 90deg;
 
-.portfolio-item {
-  display: flex;
-  flex-direction: column;
-  margin: 0.5rem 0;
-  border-radius: $border-radius;
-  transition: box-shadow 0.25s;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
+.portfolio-card { 
+  display: block;
+  height: 250px;
+
+  /* Flip from front to back */
+  &--front {
+    position: relative;
+    z-index: 1;
+    perspective: $perspective;
+    display: flex;
+    flex-direction: column;
+    border-radius: $border-radius;
+    transform-style: preserve-3d;
+    transition: box-shadow 0.25s;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px -2px rgba(0, 0, 0, 0.2);
-  width: 12rem;
-  margin: 1rem 1rem;
+    width: 12rem;
+    margin: 1rem;
+    
+    @include breakpoint-small-down {
+      width: 15rem;
+    }
+    
+    &:hover {
+      box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2);
+    }
 
-  @include breakpoint-small-down {
-    width: 15rem;
+    &.portfolio-card-back-flip {
+      animation: back-flip-1 $flip-duration 1 forwards;
+      @keyframes back-flip-1 {
+        0% {transform: rotateY(0deg); z-index: 1}
+        50% {transform: rotateY($degree) perspective($perspective); z-index: 1}
+        100% {transform: rotateY($degree); z-index: -1}
+      }
+    }
+
+    &.portfolio-card-front-flip {
+      animation: front-flip-1 $flip-duration 1 forwards;
+      @keyframes front-flip-1 {
+        0% {transform: rotateY(-$degree); z-index: -1}
+        50% {transform: rotateY(-$degree) perspective($perspective); z-index: -1}
+        100% {transform: rotateY(0deg); z-index: 1}
+      }
+    } 
   }
 
-  &:hover {
-    box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2);
+  /* Flip from back to front */
+  &--back {
+    transform: rotateY(-$degree); 
+    position: relative;
+    z-index: -1;
+    top: -$card-size / 2;
+    font-size: 0.9rem;
+    perspective: $perspective;
+    display: flex;
+    flex-direction: column;
+    border-radius: $border-radius;
+    transition: box-shadow 0.25s;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
+    0 2px 1px -2px rgba(0, 0, 0, 0.2);
+    margin: 1rem;
+    width: 12rem;
+    
+    @include breakpoint-small-down {
+      width: 15rem;
+    }
+    
+    &:hover {
+      box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2);
+    }
+
+    &.portfolio-card-back-flip {
+      animation: back-flip-2 $flip-duration 1 forwards;
+      @keyframes back-flip-2 {
+        0% {z-index: -1}
+        50% {transform: rotateY(-$degree) perspective($perspective); z-index: -1}
+        100% {transform: rotate(0deg); z-index: 1}
+      }
+    }
+
+    &.portfolio-card-front-flip {
+      animation: front-flip-2 $flip-duration 1 forwards;
+      @keyframes front-flip-2 {
+        0% {transform: rotate(0deg); z-index: 1}
+        50% {transform: rotateY($degree) perspective($perspective); z-index: 1}
+        100% {transform: rotateY($degree); z-index: -1}
+      }
+    }
   }
 
+  .portfolio-card-content { 
+    &__title {
+      flex: 1;
+      padding: 1rem 1.5rem;
+      font-size: 1.125rem;
+      font-weight: 400;
+      text-align: center;
+      
+      @include breakpoint-small-down {
+        font-size: 1.25rem;
+      }
+    }
+    
+    &__desc {
+      display: flex;
+      flex-direction: column;
+      padding: 0 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 400;
+      text-align: center;
+      line-height: 1.25rem;
+      
+      @include breakpoint-small-down {
+        font-size: 0.875rem;
+      }
+    }
+    
+    &__icon {
+      padding: 1rem 0;
+      font-size: 1.5rem;
+      font-weight: 100;
+      text-align: center;
+  
+      svg {
+        margin: 0 0.25rem;
+      }
+    }
+    
+    &__links {
+      padding: 0 0 0.75rem;
+      display: flex;
+      justify-content: space-around;
+      font-size: 0.875rem;
+      font-weight: 400;
+      
+      a {
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid inherit;
+        
+        &:hover {
+          cursor: pointer;
+          border-bottom: 2px solid inherit;
+        }
+      }
+    }
+  }
+  
   &__title {
     flex: 1;
     padding: 1rem 1.5rem;
     font-size: 1.125rem;
     font-weight: 400;
     text-align: center;
-
+    
     @include breakpoint-small-down {
       font-size: 1.25rem;
     }
   }
-
+  
   &__desc {
     display: flex;
     flex-direction: column;
@@ -41,33 +174,33 @@ $border-radius: 2px;
     font-weight: 400;
     text-align: center;
     line-height: 1.25rem;
-
+    
     @include breakpoint-small-down {
       font-size: 0.875rem;
     }
   }
-
+  
   &__icon {
     padding: 1rem 0;
     font-size: 1.5rem;
     font-weight: 100;
     text-align: center;
-
+  
     svg {
       margin: 0 0.25rem;
     }
   }
-
+  
   &__links {
     padding: 0 0 0.75rem;
     display: flex;
     justify-content: space-around;
     font-size: 0.875rem;
     font-weight: 400;
-
+    
     a {
       padding-bottom: 0.25rem;
-      border-bottom: 2px solid transparent;
+      border-bottom: 2px solid inherit;
       
       &:hover {
         cursor: pointer;
@@ -76,3 +209,15 @@ $border-radius: 2px;
     }
   }
 }
+
+//TODO: Refactor CSS for Mobile users
+// @media screen and (max-width: 481px) {
+//   .portfolio-card {
+//     gap: 1vw;
+//     grid-template-columns: repeat(auto-fit, 8vw);
+//     grid-auto-rows: 8vw;
+//     align-content: flex-start;
+//     padding: 10% 0;
+//     box-shadow: 0 10px 35px rgba(50,50,93,.1),0 2px 15px rgba(0,0,0,.07);
+//   }
+// }

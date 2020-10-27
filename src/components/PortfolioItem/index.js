@@ -1,3 +1,3 @@
-import PortfolioItem from './PortfolioItem';
+import PortfolioCard from './PortfolioCard';
 
-export default PortfolioItem;
+export default PortfolioCard;
