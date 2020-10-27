@@ -1,7 +1,7 @@
 {
   "name": "portfolio-webpage",
   "author": "kylejb",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "homepage": "https://www.kyleburda.com",
   "private": true,
   "dependencies": {
@@ -10,7 +10,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "^4.0.0",
-    "typescript": ">=2.8.0"
+    "typescript": "^4.0.5"
   },
   "scripts": {
     "predeploy": "npm run build",
