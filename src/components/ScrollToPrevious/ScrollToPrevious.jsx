@@ -20,7 +20,7 @@ const ScrollToPrevious = ( props ) => {
       className="scroll-to-previous"
       onClick={(e) => scrollToPrevious()}
     >
-      <div className="arrow bounce" style={{ color: colorPrimary }}>
+      <div className="arrow bounce" style={{ color: colorPrimary }} aria-label="Click me to go back to the previous section">
         <button className="fas fa-chevron-up fa-2x" href="#" />
         <div className="scroll-text">Click Me</div>
       </div>

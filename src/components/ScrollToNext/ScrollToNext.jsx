@@ -17,7 +17,7 @@ const ScrollToNext = (props) => {
   
 
   return (
-    <div className="scroll-to-next" onClick={(e) => scrollToNext()}>
+    <div className="scroll-to-next" onClick={(e) => scrollToNext()} aria-label="Click me to view next section">
       <div className="arrow bounce" style={{ color: colorPrimary }}>
         <div className="scroll-text">Click Me</div>
         <button className="fas fa-chevron-down fa-2x" href="#" />
