@@ -1,5 +1,26 @@
 export const projects = [{
     id: 1,
+    title: 'Commuter',
+    desc: 'Access upcoming MTA arrival times at your favorite station.',
+    icons: [{
+        id: 1,
+        type: 'database',
+        name: 'SQLite3',
+        classname: 'fas fa-database',
+        link: 'https://sqlite.org'
+    }, {
+        id: 2,
+        type: 'backend',
+        name: 'Ruby',
+        classname: 'fas fa-gem',
+        link: 'https://www.ruby-lang.org'
+    }],
+    github: {
+        link: ["https://github.com/kylejb/nyc-mta-station-arrival-feed"],
+        label: "Backend"
+    }
+}, {
+    id: 2,
     title: 'JobMate',
     desc: 'A better way to find and apply to jobs.',
     icons: [{
@@ -20,7 +41,7 @@ export const projects = [{
         label: "Fullstack"
     }
 }, { 
-    id: 2,
+    id: 3,
     title: 'ClassZoom',
     desc: 'Simplifying remote learning with Zoom API integration.',
     icons: [{
@@ -46,7 +67,7 @@ export const projects = [{
         link: [{label: 'Frontend', link: 'https://github.com/kylejb/classzoom_frontend'}, {label: 'Backend', link: 'https://github.com/kylejb/classzoom_backend'}]
     }
 }, {
-    id: 3,
+    id: 4,
     title: 'clairBuoyant',
     desc: 'Aggregating buoy and crowdsourced data for surfers.',
     icons: [{
