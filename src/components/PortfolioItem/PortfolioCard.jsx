@@ -20,19 +20,21 @@ const PortfolioCard = ( props ) => {
     <div 
       className='portfolio-card'
       >
-      <div 
-        className={'portfolio-card--front ' + (clicked ? cardFlipClassName : '')}
-        onClick={flip}
-      >
-        <PortfolioCardFront project={props.project} />
-      </div>
+        <div className='portfolio-card-inner'>
+          <div 
+            className={'portfolio-card--front ' + (clicked ? cardFlipClassName : '')}
+            onClick={flip}
+          >
+            <PortfolioCardFront project={props.project} />
+          </div>
 
-      <div 
-        className={'portfolio-card--back ' + (clicked ? cardFlipClassName : '')}
-        onClick={flip}
-      >
-        <PortfolioCardBack project={props.project} />
-      </div>
+          <div 
+            className={'portfolio-card--back ' + (clicked ? cardFlipClassName : '')}
+            onClick={flip}
+          >
+            <PortfolioCardBack project={props.project} />
+          </div>
+        </div>
     </div>
   );
 };
