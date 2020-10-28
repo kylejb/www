@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import PortfolioCard from '../../components/PortfolioItem/PortfolioCard';
+import PortfolioCard from '../../components/PortfolioCard';
 import ScrollToPrevious from '../../components/ScrollToPrevious';
 import { ThemeContext } from '../../ThemeContext';
 import { projects } from './projects';
