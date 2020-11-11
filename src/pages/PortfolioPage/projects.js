@@ -37,7 +37,7 @@ export const projects = [{
         link: 'https://rubyonrails.org'
     }],
     github: {
-        link: ["https://github.com/kylejb/JobMate"],
+        link: ["https://github.com/kylejb/JobMate-on-Rails"],
         label: "Fullstack"
     }
 }, { 
