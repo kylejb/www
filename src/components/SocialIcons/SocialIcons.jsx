@@ -12,6 +12,7 @@ const SocialIcons = () => {
   return (
     <div className="social-icons animate-icons">
         <a target="_blank" rel="noopener noreferrer" href="https://github.com/kylejb" style={ { color: colorPrimary } }><i className="fab fa-github"></i></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/kyleburda" style={ { color: colorPrimary } }><i className="fab fa-twitter"></i></a>
         <a target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/story/kylejb" style={ { color: colorPrimary } }><i className="fab fa-stack-overflow"></i></a>
         <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/kyleburda" style={ { color: colorPrimary } }><i className="fab fa-linkedin"></i></a>
         <a className="devto" target="_blank" rel="noopener noreferrer" href="https://dev.to/kylejb">
