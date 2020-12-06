@@ -91,9 +91,9 @@ export const projects = [{
     }],
     github: {
         link: [{
-            label: 'Frontend', link: 'https://github.com/kylejb/capstone-project_backend'
+            label: 'Frontend', link: 'https://github.com/kylejb/clairbuoyant_frontend'
         }, {
-            label: 'Backend', link: 'https://github.com/kylejb/clairbuoyant_frontend'
+            label: 'Backend', link: 'https://github.com/kylejb/capstone-project_backend'
         }]
     }      
 }];
