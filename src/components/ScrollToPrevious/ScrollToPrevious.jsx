@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeContext } from '../../ThemeContext';
 import { toElement as scrollToElement } from '../../utils/scroll';
-import './style.scss';
+
 
 const ScrollToPrevious = ( props ) => {
   const theme = useContext(ThemeContext);

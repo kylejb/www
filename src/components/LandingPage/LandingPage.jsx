@@ -3,7 +3,6 @@ import { ThemeContext } from '../../ThemeContext';
 import PropTypes from 'prop-types';
 import SocialIcons from '../SocialIcons/index';
 import ScrollToNext from '../ScrollToNext/index';
-import './style.scss';
 
 
 const LandingPage = () => {

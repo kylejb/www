@@ -4,7 +4,6 @@ import PortfolioCard from '../../components/PortfolioCard';
 import ScrollToPrevious from '../../components/ScrollToPrevious';
 import { ThemeContext } from '../../ThemeContext';
 import { projects } from './projects';
-import './style.scss';
 
 
 const PortfolioPage = () => {
@@ -30,7 +29,7 @@ const PortfolioPage = () => {
               .portfolio-card a:hover {
                 color: ${'#ffb727'};
                 border-bottom: 2px solid ${colorAlternate};
-              }              
+              }
             `}
           </style>
             {projects.map((project) => (

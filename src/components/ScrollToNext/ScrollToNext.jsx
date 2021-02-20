@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeContext } from '../../ThemeContext';
 import { toElement as scrollToElement } from '../../utils/scroll';
-import './style.scss';
 
 
 const ScrollToNext = (props) => {
@@ -14,7 +13,7 @@ const ScrollToNext = (props) => {
     const nextPage = document.querySelector(pageSelector);
     scrollToElement(nextPage);
   };
-  
+
 
   return (
     <div className="scroll-to-next" onClick={(e) => scrollToNext()} aria-label="Click me to view next section">

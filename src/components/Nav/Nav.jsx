@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeContext } from '../../ThemeContext';
 import { toElement as scrollToElement } from '../../utils/scroll';
-import './style.scss';
 
 
 const Nav = () => {
@@ -11,7 +10,7 @@ const Nav = () => {
 
   const [isSticky, setIsSticky] = useState(false);
   const [goingUp, setGoingUp] = useState(false);
-  
+
   const prevScrollY = useRef(0);
   const nav = useRef();
 
@@ -44,13 +43,13 @@ const Nav = () => {
       }
       prevScrollY.current = currentScrollY;
     };
-    
+
     window.addEventListener("scroll", handleScroll, { passive: true });
-    
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, [goingUp, nav]);
- 
-  
+
+
   return (
     <nav
       ref={nav}

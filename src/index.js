@@ -1,7 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from './ThemeContext'
 import ReactDOM from 'react-dom';
-import './styles/base.scss';
 import App from './App';
 
 
