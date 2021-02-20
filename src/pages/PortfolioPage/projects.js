@@ -16,8 +16,8 @@ export const projects = [{
         link: 'https://www.ruby-lang.org'
     }],
     github: {
-        link: ["https://github.com/kylejb/nyc-mta-station-arrival-feed"],
-        label: "Backend"
+        link: ['https://github.com/kylejb/nyc-mta-station-arrival-feed'],
+        label: 'Backend'
     }
 }, {
     id: 2,
@@ -37,8 +37,8 @@ export const projects = [{
         link: 'https://rubyonrails.org'
     }],
     github: {
-        link: ["https://github.com/kylejb/JobMate-on-Rails"],
-        label: "Fullstack"
+        link: ['https://github.com/kylejb/JobMate-on-Rails'],
+        label: 'Fullstack'
     }
 }, { 
     id: 3,
@@ -64,7 +64,13 @@ export const projects = [{
         link: 'https://developer.mozilla.org/en-US/docs/Web/javascript'
     }],
     github: {
-        link: [{label: 'Frontend', link: 'https://github.com/kylejb/classzoom_frontend'}, {label: 'Backend', link: 'https://github.com/kylejb/classzoom_backend'}]
+        link: [{
+            label: 'Frontend', 
+            link: 'https://github.com/kylejb/classzoom_frontend'
+        }, {
+            label: 'Backend', 
+            link: 'https://github.com/kylejb/classzoom_backend'
+        }]
     }
 }, {
     id: 4,
@@ -91,9 +97,11 @@ export const projects = [{
     }],
     github: {
         link: [{
-            label: 'Frontend', link: 'https://github.com/kylejb/capstone-project_backend'
+            label: 'Frontend', 
+            link: 'https://github.com/kylejb/clairbuoyant_frontend'
         }, {
-            label: 'Backend', link: 'https://github.com/kylejb/clairbuoyant_frontend'
+            label: 'Backend', 
+            link: 'https://github.com/kylejb/capstone-project_backend'
         }]
-    }      
+    }
 }];

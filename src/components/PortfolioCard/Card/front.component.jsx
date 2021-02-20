@@ -21,7 +21,7 @@ const PortfolioCardFront = ( props ) => {
             <div className='portfolio-card-content__links'>
                 { props.project.github.link.length > 1 ? 
                     props.project.github.link.map(repo => {
-                        return <a key={repo.label} target="_blank" rel="noopener noreferrer" href={repo.link}>{repo.label}</a> 
+                        return <a key={repo.label} target="_blank" rel="noopener noreferrer" href={repo.link}>{repo.label}</a>
                     }) : (<a target="_blank" rel="noopener noreferrer" href={props.project.github.link[0]}>{props.project.github.label}</a>)
                 }
             </div>
