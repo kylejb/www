@@ -1,4 +1,7 @@
-const isSmoothScrollSupported = ((document || {}).documentElement || {}).style
+// checks whether code runs in node or browser
+const isBrowser = () => typeof document !== "undefined";
+
+const isSmoothScrollSupported = isBrowser() && ((document || {}).documentElement || {}).style
   ? 'scrollBehavior' in document.documentElement.style
   : false;
 
