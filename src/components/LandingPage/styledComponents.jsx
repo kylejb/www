@@ -1,7 +1,6 @@
-@import '../../styles/_breakpoints.scss';
+import styled from 'styled-components';
 
-
-.landing-page {
+export const Container = styled.div`
   min-height: 100vh;
   display: flex;
   flex: 0 1 auto;
@@ -50,15 +49,7 @@
         }
       }
     }
-
-    .browser-notes {
-      font-size: 0.75rem;
-
-      span {
-        border-width: 1px;
-        border-style: solid;
-        padding: 0.125rem 0.5rem;
-      }
-    }
   }
-}
+`;
+
+

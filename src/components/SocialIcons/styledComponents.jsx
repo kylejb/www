@@ -1,6 +1,7 @@
-@import '../../styles/_breakpoints.scss';
+import styled from 'styled-components';
 
-.social-icons {
+
+export const StyledContainer = styled.div`
   padding: 0.25rem 0;
   font-size: 3rem;
 
@@ -11,7 +12,7 @@
   a {
     padding: 0 0.625rem;
 
-    &.devto svg {
+    &#devto svg {
       margin-bottom: -0.25rem;
       width: 2.7rem;
       height: 2.7rem;
@@ -20,23 +21,6 @@
         margin-bottom: -0.225rem;
         width: 2.25rem;
         height: 2.25rem;
-      }
-    }
-  }
-
-  &.animate-icons {
-    a {
-      display: inline-block;
-      transform: perspective(1px) translateZ(0);
-      box-shadow: 0 0 1px transparent;
-
-      &:hover,
-      &:focus,
-      &:active {
-        animation-name: icon-wobble;
-        animation-duration: 0.75s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: 1;
       }
     }
   }
@@ -55,4 +39,20 @@
       transform: translateY(0px);
     }
   }
-}
+`;
+
+export const StyledAnchorTag = styled.a`
+  display: inline-block;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+
+  &:hover,
+  &:focus,
+  &:active {
+    animation-name: icon-wobble;
+    animation-duration: 0.75s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+  }
+`;
+
