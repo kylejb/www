@@ -12,7 +12,7 @@ export const StyledContainer = styled.div`
   a {
     padding: 0 0.625rem;
 
-    &#devto svg {
+    &#devto-icon svg {
       margin-bottom: -0.25rem;
       width: 2.7rem;
       height: 2.7rem;
@@ -42,6 +42,7 @@ export const StyledContainer = styled.div`
 `;
 
 export const StyledAnchorTag = styled.a`
+  color: ${props => props.themeColor};
   display: inline-block;
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px transparent;

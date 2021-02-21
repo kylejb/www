@@ -1,4 +1,7 @@
-.scroll-to-next {
+import styled from 'styled-components';
+
+
+export const StyledScroll = styled.div`
   cursor: pointer;
 
   .arrow {
@@ -6,11 +9,11 @@
     margin: 0 auto;
     padding-bottom: 0.5rem;
 
-    .scroll-text {
-      text-align: center;
-      font-size: 0.5rem;
-      margin-bottom: -0.125rem;
-    }
+  }
+  .scroll-text {
+    text-align: center;
+    font-size: 0.5rem;
+    margin-top: -0.125rem;
   }
 
   .bounce {
@@ -32,4 +35,4 @@
       transform: translateY(-15px);
     }
   }
-}
+`;

@@ -1,7 +1,7 @@
-@import '../../styles/_breakpoints.scss';
+import styled from 'styled-components';
 
 
-nav {
+export const StyledNav = styled.div`
   position: fixed;
   top: 0;
   width: 100%;
@@ -9,10 +9,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-
-  @include breakpoint-small-down {
-    height: 4rem;
-  }
 
   .magic-wand {
     cursor: pointer;
@@ -48,7 +44,7 @@ nav {
       }
     }
   }
-  
+
   .menu {
     margin-right: 1rem;
     display: flex;
@@ -67,4 +63,4 @@ nav {
       }
     }
   }
-}
+`;

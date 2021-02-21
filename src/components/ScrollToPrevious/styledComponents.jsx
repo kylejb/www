@@ -1,4 +1,7 @@
-.scroll-to-previous {
+import styled from 'styled-components';
+
+
+export const StyledScroll = styled.div`
   cursor: pointer;
 
   .arrow {
@@ -32,4 +35,4 @@
       transform: translateY(-15px);
     }
   }
-}
+`;
