@@ -1,13 +1,12 @@
-import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import PortfolioCard from '../../components/PortfolioCard';
 import ScrollToPrevious from '../../components/ScrollToPrevious';
-import { ThemeContext } from '../../ThemeContext';
+import { useThemeContext } from '../../contexts/theme/ThemeContext';
 import { projects } from './projects';
 
 
 const PortfolioPage = () => {
-  const theme = useContext(ThemeContext);
+  const theme = useThemeContext();
   const { currentTheme: {colorPrimary, colorAlternate, textAlternate, bgPrimary } } = theme;
 
 

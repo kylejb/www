@@ -1,11 +1,12 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { ThemeContext } from '../../ThemeContext';
+import { useThemeContext } from '../../contexts/theme/ThemeContext';
 import { toElement as scrollToElement } from '../../utils/scroll';
+import { StyledNav } from './styledComponents';
 
 
 const Nav = () => {
-  const theme = useContext(ThemeContext);
+  const theme = useThemeContext();
   const { currentTheme: { colorPrimary, bgPrimary, navAlpha }, switchTheme } = theme;
 
   const [isSticky, setIsSticky] = useState(false);
@@ -51,7 +52,7 @@ const Nav = () => {
 
 
   return (
-    <nav
+    <StyledNav
       ref={nav}
       className={stickyClass}
       style={stickyStyles}
@@ -81,7 +82,7 @@ const Nav = () => {
           Portfolio
         </div>
       </div>
-    </nav>
+    </StyledNav>
   );
 };
 

@@ -1,22 +1,22 @@
-import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { ThemeContext } from '../../ThemeContext';
+import { useThemeContext } from '../../contexts/theme/ThemeContext';
 import { toElement as scrollToElement } from '../../utils/scroll';
+import { StyledScroll } from './styledComponents';
 
 
 const ScrollToPrevious = ( props ) => {
-  const theme = useContext(ThemeContext);
+  const theme = useThemeContext();
   const { currentTheme: { colorPrimary } } = theme;
 
   const scrollToPrevious = () => {
     const { pageSelector } = props;
     const nextPage = document.querySelector(pageSelector);
     scrollToElement(nextPage);
-  }
+  };
 
 
   return (
-    <div
+    <StyledScroll
       className="scroll-to-previous"
       onClick={(e) => scrollToPrevious()}
     >
@@ -24,7 +24,7 @@ const ScrollToPrevious = ( props ) => {
         <button className="fas fa-chevron-up fa-2x" href="#" />
         <div className="scroll-text">Click Me</div>
       </div>
-    </div>
+    </StyledScroll>
   );
 };
 

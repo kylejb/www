@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PortfolioCardBack from './Card/back.component';
 import PortfolioCardFront from './Card/front.component';
+import { StyledCard } from './styledComponent';
 
 
 const PortfolioCard = ( props ) => {
@@ -16,25 +17,23 @@ const PortfolioCard = ( props ) => {
 
 
   return (
-    <div
-      className='portfolio-card'
-      >
-        <div className='portfolio-card-inner'>
-          <div
-            className={'portfolio-card--front ' + (clicked ? cardFlipClassName : '')}
-            onClick={flip}
-          >
-            <PortfolioCardFront project={props.project} />
-          </div>
-
-          <div
-            className={'portfolio-card--back ' + (clicked ? cardFlipClassName : '')}
-            onClick={flip}
-          >
-            <PortfolioCardBack project={props.project} />
-          </div>
+    <StyledCard className='portfolio-card'>
+      <div className='portfolio-card-inner'>
+        <div
+          className={'portfolio-card--front ' + (clicked ? cardFlipClassName : '')}
+          onClick={flip}
+        >
+          <PortfolioCardFront project={props.project} />
         </div>
-    </div>
+
+        <div
+          className={'portfolio-card--back ' + (clicked ? cardFlipClassName : '')}
+          onClick={flip}
+        >
+          <PortfolioCardBack project={props.project} />
+        </div>
+      </div>
+    </StyledCard>
   );
 };
 

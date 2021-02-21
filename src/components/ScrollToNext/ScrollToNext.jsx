@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { ThemeContext } from '../../ThemeContext';
+import { useThemeContext } from '../../contexts/theme/ThemeContext';
 import { toElement as scrollToElement } from '../../utils/scroll';
+import { StyledScroll } from './styledComponents';
 
 
-const ScrollToNext = (props) => {
-  const theme = useContext(ThemeContext);
+const ScrollToNext = ( props ) => {
+  const theme = useThemeContext();
   const { currentTheme: { colorPrimary } } = theme;
 
   const scrollToNext = () => {
@@ -16,12 +16,12 @@ const ScrollToNext = (props) => {
 
 
   return (
-    <div className="scroll-to-next" onClick={(e) => scrollToNext()} aria-label="Click me to view next section">
+    <StyledScroll className="scroll-to-next" onClick={(e) => scrollToNext()} aria-label="Click me to view next section">
       <div className="arrow bounce" style={{ color: colorPrimary }}>
         <div className="scroll-text">Click Me</div>
         <button className="fas fa-chevron-down fa-2x" href="#" />
       </div>
-    </div>
+    </StyledScroll>
   );
 };
 

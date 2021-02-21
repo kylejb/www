@@ -1,36 +1,35 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from '../../ThemeContext';
+import { useThemeContext } from '../../contexts/theme/ThemeContext';
 import PropTypes from 'prop-types';
 import SocialIcons from '../SocialIcons/index';
 import ScrollToNext from '../ScrollToNext/index';
+import { Container } from './styledComponents';
 
 
 const LandingPage = () => {
-  const theme = useContext(ThemeContext);
+  const theme = useThemeContext();
 
   const { currentTheme: { bgPrimary, colorPrimary } } = theme;
 
 
   return (
-    <div style={{ backgroundColor: bgPrimary }} className="landing-page">
+    <Container style={{ backgroundColor: bgPrimary }} className="landing-page">
       <main style={{ color: colorPrimary }}>
         <div className="intro-wrapper">
           <div className="intro-name">Hello, I'm Kyle!</div>
           <div className="tagline">
             Full Stack Dev | Open-Source Enthusiast | Blogger | Avid Surfer
           </div>
-            <SocialIcons />
+          <SocialIcons />
         </div>
       </main>
       <ScrollToNext pageSelector=".portfolio-page" />
-    </div>
+    </Container>
   );
 };
+
+export default LandingPage;
 
 
 LandingPage.propTypes = {
   theme: PropTypes.any
 };
-
-
-export default LandingPage;
