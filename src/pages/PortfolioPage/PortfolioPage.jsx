@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
-import PortfolioCard from '../../components/PortfolioCard';
+import PortfolioCard from '../../components/PortfolioCard/ExpComponent';
 import ScrollToPrevious from '../../components/ScrollToPrevious';
 import { useThemeContext } from '../../contexts/theme/ThemeContext';
 import { projects } from './projects';
+import { Container } from './styledComponents';
 
 
 const PortfolioPage = () => {
@@ -11,7 +12,7 @@ const PortfolioPage = () => {
 
 
   return (
-    <div className="portfolio-page" style={{ backgroundColor: bgPrimary }}>
+    <Container className="portfolio-page" style={{ backgroundColor: bgPrimary }}>
       <div className="content-grid">
         <h1 style={{ color: colorPrimary }}>Portfolio</h1>
         <div className="portfolio-wrapper">
@@ -37,7 +38,7 @@ const PortfolioPage = () => {
         </div>
       </div>
       <ScrollToPrevious pageSelector=".landing-page" />
-    </div>
+    </Container>
   );
 };
 

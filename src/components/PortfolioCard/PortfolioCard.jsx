@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { useThemeContext } from '../../contexts/theme/ThemeContext';
 import PortfolioCardBack from './Card/back.component';
 import PortfolioCardFront from './Card/front.component';
-import { StyledCard } from './styledComponent';
+import { CardWrapper, InnerCard, FrontCard, BackCard } from './styledComponent';
 
 
 const PortfolioCard = ( props ) => {
@@ -9,6 +10,8 @@ const PortfolioCard = ( props ) => {
         [ clicked, setClicked ] = useState(null);
   const cardFlipClassName = (flipped ? 'portfolio-card-back-flip' : 'portfolio-card-front-flip');
 
+  const theme = useThemeContext();
+  const { currentTheme: {colorPrimary, colorAlternate, textAlternate, bgPrimary } } = theme;
 
   const flip = () => {
     setFlipped(!flipped);
@@ -17,23 +20,21 @@ const PortfolioCard = ( props ) => {
 
 
   return (
-    <StyledCard className='portfolio-card'>
-      <div className='portfolio-card-inner'>
-        <div
-          className={'portfolio-card--front ' + (clicked ? cardFlipClassName : '')}
+    <CardWrapper className='portfolio-card'>
+      <InnerCard className='portfolio-card-inner' flip={flipped ? 'FLIP_BACK' : 'FLIP_FRONT'}>
+        <FrontCard
           onClick={flip}
         >
           <PortfolioCardFront project={props.project} />
-        </div>
+        </FrontCard>
 
-        <div
-          className={'portfolio-card--back ' + (clicked ? cardFlipClassName : '')}
+        <BackCard
           onClick={flip}
         >
           <PortfolioCardBack project={props.project} />
-        </div>
-      </div>
-    </StyledCard>
+        </BackCard>
+      </InnerCard>
+    </CardWrapper>
   );
 };
 

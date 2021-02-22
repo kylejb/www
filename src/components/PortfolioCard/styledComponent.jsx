@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 const border_radius = '2px';
 const card_size = '25rem';
@@ -6,7 +6,145 @@ const flip_duration = '1s';
 const perspective = '1000px';
 const degree = '90deg';
 
-export const StyledCard = styled.div`
+const back_flip_1 = keyframes`
+  0% {transform: rotateY(0deg); z-index: 1}
+  50% {transform: rotateY(${degree}) perspective(${perspective}); z-index: 1}
+  100% {transform: rotateY(${degree}); z-index: -1}
+`;
+
+const back_flip_2 = keyframes`
+  0% {transform: rotateY(-${degree}); z-index: -1}
+  50% {transform: rotateY(-${degree}) perspective(${perspective}); z-index: -1}
+  100% {transform: rotateY(0deg); z-index: 1}
+`;
+
+const front_flip_1 = keyframes`
+  0% {transform: rotateY(-${degree}); z-index: -1}
+  50% {transform: rotateY(-${degree}) perspective(${perspective}); z-index: -1}
+  100% {transform: rotateY(0deg); z-index: 1}
+`;
+
+const front_flip_2 = keyframes`
+  0% {transform: rotateY(0deg); z-index: 1}
+  50% {transform: rotateY(${degree}) perspective(${perspective}); z-index: 1}
+  100% {transform: rotateY(${degree}); z-index: -1}
+`;
+
+export const InnerCard = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  -webkit-transition: transform 0.1s;
+    transition: transform 0.1s;
+  -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+
+    ${ ({ flip }) => flip === 'FRONT_FLIP' && css`
+    -webkit-animation: ${front_flip_1} ${flip_duration} 0.01s forwards;
+    animation: ${front_flip_1} ${flip_duration} 0.01s forwards;
+  `}
+`;
+export const FrontCard = styled.div`
+  position: relative;
+  z-index: 1;
+  -webkit-perspective: ${perspective};
+  perspective: ${perspective};
+  display: flex;
+  flex-direction: column;
+  border-radius: ${border_radius};
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
+  0 2px 1px -2px rgba(0, 0, 0, 0.2);
+  -webkit-transition: box-shadow 0.25s;
+  transition: box-shadow 0.25s;
+  margin: 1rem;
+  width: 12rem;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  /* @include breakpoint-small-down {
+    width: 15rem;
+  } */
+
+  &:hover {
+    box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2);
+  }
+
+  ${ ({ flip }) => flip === 'FRONT_FLIP' && css`
+    -webkit-animation: ${front_flip_1} ${flip_duration} 0.01s forwards;
+    animation: ${front_flip_1} ${flip_duration} 0.01s forwards;
+  `}
+`;
+
+export const BackCard = styled.div`
+  position: relative;
+  z-index: -1;
+  top: -${card_size} / 2;
+  font-size: 0.9rem;
+  -webkit-perspective: ${perspective};
+  perspective: ${perspective};
+  display: flex;
+  flex-direction: column;
+  border-radius: ${border_radius};
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
+  0 2px 1px -2px rgba(0, 0, 0, 0.2);
+  -webkit-transition: box-shadow 0.25s;
+  transition: box-shadow 0.25s;
+  margin: 1rem;
+  width: 12rem;
+  overflow: hidden;
+
+  /* @include breakpoint-small-down {
+    width: 15rem;
+  } */
+
+  &:hover {
+    box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2);
+  }
+
+  ${ ({ flip }) => flip === 'FLIP_BACK' && css`
+    -webkit-animation: ${back_flip_1} ${flip_duration} 0.01s forwards;
+    animation: ${back_flip_1} ${flip_duration} 0.01s forwards;
+  `}
+`;
+
+export const FlipBackCard = styled.div`
+  ${props => console.log(props.flip)}
+  -webkit-animation: ${back_flip_1} ${flip_duration} 0.01s forwards;
+  animation: ${back_flip_1} ${flip_duration} 0.01s forwards;
+`;
+
+// &.portfolio-card-back-flip {
+//   -webkit-animation: back-flip-2 ${flip_duration} 0.01s forwards;
+//   animation: back-flip-2 ${flip_duration} 0.01s forwards;
+//   @keyframes back-flip-2 {
+//     0% {transform: rotateY(-${degree}); z-index: -1}
+//     50% {transform: rotateY(-${degree}) perspective(${perspective}); z-index: -1}
+//     100% {transform: rotateY(0deg); z-index: 1}
+//   }
+//   @-webkit-keyframes back-flip-2 {
+//     0% {-webkit-transform: rotateY(-${degree}); z-index: -1}
+//     50% {-webkit-transform: rotateY(-${degree}) perspective(${perspective}); z-index: -1}
+//     100% {-webkit-transform: rotateY(0deg); z-index: 1}
+//   }
+// }
+
+export const FlipFrontCard = styled.div`
+  -webkit-animation: ${front_flip_1} ${flip_duration} 0.01s forwards;
+  animation: ${front_flip_1} ${flip_duration} 0.01s forwards;
+`;
+
+
+export const CardWrapper = styled.div``;
+
+
+export const _CardWrapper = styled.div`
   .portfolio-card-inner {
     position: relative;
     width: 100%;
@@ -18,7 +156,7 @@ export const StyledCard = styled.div`
       transform-style: preserve-3d;
 
       /* Flip from front to back */
-      .portfolio-card--front {
+    .portfolio-card--front {
       position: relative;
       z-index: 1;
       -webkit-perspective: ${perspective};
