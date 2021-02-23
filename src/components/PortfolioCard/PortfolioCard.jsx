@@ -1,42 +1,31 @@
-import { useState } from 'react';
-import { useThemeContext } from '../../contexts/theme/ThemeContext';
-import PortfolioCardBack from './Card/back.component';
-import PortfolioCardFront from './Card/front.component';
-import { CardWrapper, InnerCard, FrontCard, BackCard } from './styledComponent';
+import {
+  GridColumn,
+  GridContainer,
+  GridRow,
+  Card,
+  CardBack,
+  CardFront,
+  CardTitle,
+  CardDescription,
+} from './expStyledComponent';
 
+const ExpComponent = ( props ) => {
 
-const PortfolioCard = ( props ) => {
-  const [ flipped, setFlipped ] = useState(null),
-        [ clicked, setClicked ] = useState(null);
-  const cardFlipClassName = (flipped ? 'portfolio-card-back-flip' : 'portfolio-card-front-flip');
-
-  const theme = useThemeContext();
-  const { currentTheme: {colorPrimary, colorAlternate, textAlternate, bgPrimary } } = theme;
-
-  const flip = () => {
-    setFlipped(!flipped);
-    setClicked(true);
+  const flipCard = (event) => {
+    event.currentTarget.classList.toggle('flipped');
   };
 
-
   return (
-    <CardWrapper className='portfolio-card'>
-      <InnerCard className='portfolio-card-inner' flip={flipped ? 'FLIP_BACK' : 'FLIP_FRONT'}>
-        <FrontCard
-          onClick={flip}
-        >
-          <PortfolioCardFront project={props.project} />
-        </FrontCard>
-
-        <BackCard
-          onClick={flip}
-        >
-          <PortfolioCardBack project={props.project} />
-        </BackCard>
-      </InnerCard>
-    </CardWrapper>
+    <Card onClick={flipCard}>
+        <CardFront>
+          <CardTitle>{props.project.title}</CardTitle>
+          <CardDescription>props.project.desc</CardDescription>
+        </CardFront>
+        <CardBack>
+          <CardDescription><u>Placeholder:</u><i>{props.project.id} will be added (e.g., gifs and/or demo url)</i></CardDescription>
+        </CardBack>
+    </Card>
   );
 };
 
-
-export default PortfolioCard;
+export default ExpComponent;

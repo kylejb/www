@@ -19,18 +19,19 @@ export const Container = styled.div`
     text-align: center;
   }
 
-  .content-grid {
-    display: grid;
-  }
-
-  .portfolio-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    /* @include breakpoint-small-down {
-      flex-direction: column;
-      align-items: center;
-    } */
-  }
 `;
+
+export const Wrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 50px;
+`;
+
+/* @include breakpoint-small-down {
+  flex-direction: column;
+  align-items: center;
+} */
+  // .content-grid {
+  //   display: grid;
+  // }

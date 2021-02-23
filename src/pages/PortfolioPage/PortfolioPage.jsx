@@ -1,51 +1,38 @@
 import PropTypes from 'prop-types';
-import PortfolioCard from '../../components/PortfolioCard/ExpComponent';
+import PortfolioCard from '../../components/PortfolioCard';
 import ScrollToPrevious from '../../components/ScrollToPrevious';
 import { useThemeContext } from '../../contexts/theme/ThemeContext';
 import { projects } from './projects';
-import { Container } from './styledComponents';
+import {
+  GridContainer,
+  GridRow,
+  GridColumn
+} from '../../components/PortfolioCard/expStyledComponent';
 
 
 const PortfolioPage = () => {
   const theme = useThemeContext();
   const { currentTheme: {colorPrimary, colorAlternate, textAlternate, bgPrimary } } = theme;
 
+  const renderProj = () => projects.map((project) => (
+    <GridColumn sm='6' lg='4'>
+      <PortfolioCard className={project.title} id={project.id} project={project} key={project.id} />
+    </GridColumn>
+  ));
 
   return (
-    <Container className="portfolio-page" style={{ backgroundColor: bgPrimary }}>
-      <div className="content-grid">
-        <h1 style={{ color: colorPrimary }}>Portfolio</h1>
-        <div className="portfolio-wrapper">
-          <style jsx="true">
-            {`
-              .portfolio-card-content__title, .portfolio-card-content__desc, .portfolio-card-content__links, .portfolio-card-content__icon {
-                background-color: ${colorPrimary};
-                color: ${textAlternate};
-              }
-              .portfolio-card a {
-                background-color: ${colorPrimary};
-                color: ${textAlternate};
-              }
-              .portfolio-card a:hover {
-                color: ${'#ffb727'};
-                border-bottom: 2px solid ${colorAlternate};
-              }
-            `}
-          </style>
-            {projects.map((project) => (
-                <PortfolioCard project={project} key={project.id} />
-            ))}
-        </div>
-      </div>
+    <GridContainer>
+      <h1 style={{ color: colorPrimary }}>Portfolio</h1>
+      <GridRow breakpoints={[700]}>
+          {renderProj()}
+        </GridRow>
       <ScrollToPrevious pageSelector=".landing-page" />
-    </Container>
+    </GridContainer>
   );
 };
-
 
 PortfolioPage.propTypes = {
   theme: PropTypes.any
 };
-
 
 export default PortfolioPage;
