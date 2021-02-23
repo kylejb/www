@@ -1,4 +1,32 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+
+const flip_duration = '1s';
+const perspective = '1000px';
+const degree = '90deg';
+
+const back_flip_1 = keyframes`
+  0% {transform: rotateY(0deg); z-index: 1}
+  50% {transform: rotateY(${degree}) perspective(${perspective}); z-index: 1}
+  100% {transform: rotateY(${degree}); z-index: -1}
+`;
+
+const back_flip_2 = keyframes`
+  0% {transform: rotateY(-${degree}); z-index: -1}
+  50% {transform: rotateY(-${degree}) perspective(${perspective}); z-index: -1}
+  100% {transform: rotateY(0deg); z-index: 1}
+`;
+
+const front_flip_1 = keyframes`
+  0% {transform: rotateY(-${degree}); z-index: -1}
+  50% {transform: rotateY(-${degree}) perspective(${perspective}); z-index: -1}
+  100% {transform: rotateY(0deg); z-index: 1}
+`;
+
+const front_flip_2 = keyframes`
+  0% {transform: rotateY(0deg); z-index: 1}
+  50% {transform: rotateY(${degree}) perspective(${perspective}); z-index: 1}
+  100% {transform: rotateY(${degree}); z-index: -1}
+`;
 
 // Helper function to convert pixels to rems (remy)
 const remy = px => `${px / 16}rem`
@@ -23,8 +51,8 @@ const getFlex = (value) => {
 export const GridContainer = styled.div`
   padding-right: ${remy(15)};
   padding-left: ${remy(15)};
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 10px;
+  margin-left: 10px;
   width: 100%;
 
   // Breakpoint for tablets
