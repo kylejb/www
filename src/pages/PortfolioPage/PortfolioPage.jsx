@@ -15,19 +15,21 @@ const PortfolioPage = () => {
   const { currentTheme: {colorPrimary, colorAlternate, textAlternate, bgPrimary } } = theme;
 
   const renderProj = () => projects.map((project) => (
-    <GridColumn sm='6' lg='4'>
+    <GridColumn key={project.id} sm='6' lg='4'>
       <PortfolioCard className={project.title} id={project.id} project={project} key={project.id} />
     </GridColumn>
   ));
 
   return (
-    <GridContainer>
-      <h1 style={{ color: colorPrimary }}>Portfolio</h1>
-      <GridRow breakpoints={[700]}>
+    <div className="portfolio-page" style={{ backgroundColor: bgPrimary }}>
+      <GridContainer>
+        <h1 style={{ color: colorPrimary }}>Portfolio</h1>
+        <GridRow breakpoints={[700]}>
           {renderProj()}
         </GridRow>
-      <ScrollToPrevious pageSelector=".landing-page" />
-    </GridContainer>
+        <ScrollToPrevious pageSelector=".landing-page" />
+      </GridContainer>
+    </div>
   );
 };
 
