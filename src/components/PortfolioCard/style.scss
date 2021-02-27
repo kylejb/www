@@ -7,7 +7,7 @@ $flip-duration: 1s;
 $perspective: 1000px;
 $degree: 90deg;
 
-.portfolio-card { 
+.portfolio-card {
   .portfolio-card-inner {
     position: relative;
     width: 100%;
@@ -17,7 +17,7 @@ $degree: 90deg;
       transition: transform 0.1s;
     -webkit-transform-style: preserve-3d;
       transform-style: preserve-3d;
-      
+
       /* Flip from front to back */
       .portfolio-card--front {
       position: relative;
@@ -38,17 +38,17 @@ $degree: 90deg;
       overflow: hidden;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
-      
+
       @include breakpoint-small-down {
         width: 15rem;
       }
-      
+
       &:hover {
         box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2);
       }
-  
+
       &.portfolio-card-back-flip {
-        -webkit-animation: back-flip-1 $flip-duration 0.01s forwards;     
+        -webkit-animation: back-flip-1 $flip-duration 0.01s forwards;
         animation: back-flip-1 $flip-duration 0.01s forwards;
         @keyframes back-flip-1 {
           0% {transform: rotateY(0deg); z-index: 1}
@@ -61,7 +61,7 @@ $degree: 90deg;
           100% {-webkit-transform: rotateY($degree); z-index: -1}
         }
       }
-  
+
       &.portfolio-card-front-flip {
         -webkit-animation: front-flip-1 $flip-duration 0.01s forwards;
         animation: front-flip-1 $flip-duration 0.01s forwards;
@@ -75,9 +75,9 @@ $degree: 90deg;
           50% {-webkit-transform: rotateY(-$degree) perspective($perspective); z-index: -1}
           100% {-webkit-transform: rotateY(0deg); z-index: 1}
         }
-      } 
+      }
     }
-  
+
     /* Flip from back to front */
     .portfolio-card--back {
       position: relative;
@@ -98,18 +98,19 @@ $degree: 90deg;
       margin: 1rem;
       width: 12rem;
       overflow: hidden;
-      
-      
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+
       @include breakpoint-small-down {
         width: 15rem;
       }
-      
+
       &:hover {
         box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2);
       }
-  
+
       &.portfolio-card-back-flip {
-        -webkit-animation: back-flip-2 $flip-duration 0.01s forwards;    
+        -webkit-animation: back-flip-2 $flip-duration 0.01s forwards;
         animation: back-flip-2 $flip-duration 0.01s forwards;
         @keyframes back-flip-2 {
           0% {transform: rotateY(-$degree); z-index: -1}
@@ -122,9 +123,9 @@ $degree: 90deg;
           100% {-webkit-transform: rotateY(0deg); z-index: 1}
         }
       }
-  
+
       &.portfolio-card-front-flip {
-        -webkit-animation: front-flip-2 $flip-duration 0.01s forwards;   
+        -webkit-animation: front-flip-2 $flip-duration 0.01s forwards;
         animation: front-flip-2 $flip-duration 0.01s forwards;
         @keyframes front-flip-2 {
           0% {transform: rotateY(0deg); z-index: 1}
@@ -138,19 +139,19 @@ $degree: 90deg;
         }
       }
     }
-  
-    .portfolio-card-content { 
+
+    .portfolio-card-content {
       &__title {
         padding: 1rem 1.5rem;
         font-size: 1.125rem;
         font-weight: 400;
         text-align: center;
-        
+
         @include breakpoint-small-down {
           font-size: 1.25rem;
         }
       }
-      
+
       &__desc {
         display: flex;
         flex-direction: column;
@@ -159,34 +160,34 @@ $degree: 90deg;
         font-weight: 400;
         text-align: center;
         line-height: 1.25rem;
-        
+
         @include breakpoint-small-down {
           font-size: 0.875rem;
         }
       }
-      
+
       &__icon {
         padding: 1rem 0;
         font-size: 1.5rem;
         font-weight: 100;
         text-align: center;
-    
+
         svg {
           margin: 0 0.25rem;
         }
       }
-      
+
       &__links {
         padding: 0 0 0.75rem;
         display: flex;
         justify-content: space-around;
         font-size: 0.875rem;
         font-weight: 400;
-        
+
         a {
           padding-bottom: 0.25rem;
           border-bottom: 2px solid inherit;
-          
+
           &:hover {
             cursor: pointer;
             border-bottom: 2px solid inherit;
@@ -194,19 +195,19 @@ $degree: 90deg;
         }
       }
     }
-    
+
     &__title {
       flex: 1;
       padding: 1rem 1.5rem;
       font-size: 1.125rem;
       font-weight: 400;
       text-align: center;
-      
+
       @include breakpoint-small-down {
         font-size: 1.25rem;
       }
     }
-    
+
     &__desc {
       display: flex;
       flex-direction: column;
@@ -215,34 +216,34 @@ $degree: 90deg;
       font-weight: 400;
       text-align: center;
       line-height: 1.25rem;
-      
+
       @include breakpoint-small-down {
         font-size: 0.875rem;
       }
     }
-    
+
     &__icon {
       padding: 1rem 0;
       font-size: 1.5rem;
       font-weight: 100;
       text-align: center;
-    
+
       svg {
         margin: 0 0.25rem;
       }
     }
-    
+
     &__links {
       padding: 0 0 0.75rem;
       display: flex;
       justify-content: space-around;
       font-size: 0.875rem;
       font-weight: 400;
-      
+
       a {
         padding-bottom: 0.25rem;
         border-bottom: 2px solid inherit;
-        
+
         &:hover {
           cursor: pointer;
           border-bottom: 2px solid inherit;
