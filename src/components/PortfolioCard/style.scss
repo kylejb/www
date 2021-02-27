@@ -18,8 +18,8 @@ $degree: 90deg;
     -webkit-transform-style: preserve-3d;
       transform-style: preserve-3d;
 
-      /* Flip from front to back */
-      .portfolio-card--front {
+    /* Flip from front to back */
+    .portfolio-card--front {
       position: relative;
       z-index: 1;
       -webkit-perspective: $perspective;
