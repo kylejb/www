@@ -28,6 +28,10 @@ const front_flip_2 = keyframes`
   100% {transform: rotateY(${degree}); z-index: -1}
 `;
 
+export const CardWrapper = styled.div`
+    margin: 20px;
+`;
+
 // Helper function to convert pixels to rems (remy)
 const remy = px => `${px / 16}rem`
 
@@ -160,6 +164,8 @@ export const CardSide = css`
 
 // Card side - front
 export const CardFront = styled.div`
+  background-color: ${({styledBackgroundColor}) => styledBackgroundColor};
+  color: ${({styledColor}) => styledColor};
   ${CardSide};
 
   font-weight: bold;
@@ -168,6 +174,8 @@ export const CardFront = styled.div`
 
 // Card side - back
 export const CardBack = styled.div`
+  background-color: ${({styledBackgroundColor}) => styledBackgroundColor};
+  color: ${({styledColor}) => styledColor};
   ${CardSide};
 
   transform: rotateY(-180deg);
@@ -180,9 +188,13 @@ export const CardNumber = styled.span`
 `
 
 export const CardTitle = styled.h2`
+  background-color: ${({styledBackgroundColor}) => styledBackgroundColor};
+  color: ${({styledColor}) => styledColor};
   font-size: ${remy(21)};
 `
 
 export const CardDescription = styled.span`
+  background-color: ${({styledBackgroundColor}) => styledBackgroundColor};
+  color: ${({styledColor}) => styledColor};
   font-size: ${remy(16)};
 `

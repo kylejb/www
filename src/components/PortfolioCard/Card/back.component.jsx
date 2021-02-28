@@ -1,12 +1,14 @@
-const PortfolioCardBack = ( props ) => {
+import { CardDescription, CardTitle } from '../expStyledComponent';
+
+const PortfolioCardBack = ({ project }) => {
   return (
     <>
-      <div className='portfolio-card-content__title'>
-        {props.project.title}
-      </div>
-      <div className='portfolio-card-content__desc'>
+      <CardTitle className='portfolio-card-content__title'>
+        {project.title}
+      </CardTitle>
+      <CardDescription className='portfolio-card-content__desc'>
         <u>Placeholder:</u><i>Content will be added (e.g., gifs and/or demo url)</i>
-      </div>
+      </CardDescription>
     </>
   );
 };

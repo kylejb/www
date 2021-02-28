@@ -1,16 +1,18 @@
-const PortfolioCardFront = ( props ) => {
+import { CardDescription, CardTitle } from '../expStyledComponent';
+
+const PortfolioCardFront = ({ project }) => {
   return (
     <>
-      <div className='portfolio-card-content__title'>
-        {props.project.title}
-      </div>
+      <CardTitle>
+        {project.title}
+      </CardTitle>
 
-      <div className='portfolio-card-content__desc'>
-        {props.project.desc}
-      </div>
+      <CardDescription>
+        {project.desc}
+      </CardDescription>
 
       <div className='portfolio-card-content__icon'>
-        { props.project.icons.map(icon =>
+        {project.icons.map(icon =>
           <a
             key={icon.id}
             target="_blank"
@@ -21,8 +23,8 @@ const PortfolioCardFront = ( props ) => {
       </div>
 
       <div className='portfolio-card-content__links'>
-        { props.project.github.link.length > 1
-          ? props.project.github.link.map(repo =>
+        {project.github.link.length > 1
+          ?project.github.link.map(repo =>
               <a
                 key={repo.label}
                 target="_blank"
@@ -33,8 +35,10 @@ const PortfolioCardFront = ( props ) => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href={props.project.github.link[0]}
-            >{props.project.github.label}</a>)
+              href={project.github.link[0]}
+            >
+              {project.github.label}
+            </a>)
         }
       </div>
     </>

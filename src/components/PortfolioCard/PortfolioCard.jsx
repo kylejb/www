@@ -1,30 +1,44 @@
+import { useThemeContext } from '../../contexts/theme/ThemeContext';
+import PortfolioCardBack from './Card/back.component';
+import PortfolioCardFront from './Card/front.component';
 import {
-  GridColumn,
-  GridContainer,
-  GridRow,
+  CardWrapper,
   Card,
   CardBack,
   CardFront,
-  CardTitle,
-  CardDescription,
 } from './expStyledComponent';
 
 const ExpComponent = ( props ) => {
+
+  const theme = useThemeContext();
+  const { currentTheme: {colorPrimary, colorAlternate, textAlternate, bgPrimary } } = theme;
 
   const flipCard = (event) => {
     event.currentTarget.classList.toggle('flipped');
   };
 
+
+
   return (
-    <Card onClick={flipCard}>
-        <CardFront>
-          <CardTitle>{props.project.title}</CardTitle>
-          <CardDescription>props.project.desc</CardDescription>
+    <CardWrapper style={{margin: "20px"}}>
+      <Card onClick={flipCard}
+        styledBackgroundColor={colorPrimary}
+        styledColor={colorAlternate}
+      >
+        <CardFront
+          styledBackgroundColor={colorPrimary}
+          styledColor={colorAlternate}
+          >
+          <PortfolioCardFront project={props.project}/>
         </CardFront>
-        <CardBack>
-          <CardDescription><u>Placeholder:</u><i>{props.project.id} will be added (e.g., gifs and/or demo url)</i></CardDescription>
+        <CardBack
+          styledBackgroundColor={colorPrimary}
+          styledColor={colorAlternate}
+        >
+          <PortfolioCardBack project={props.project} />
         </CardBack>
-    </Card>
+      </Card>
+    </CardWrapper>
   );
 };
 
