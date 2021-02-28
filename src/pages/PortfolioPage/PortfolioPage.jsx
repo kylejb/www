@@ -22,7 +22,7 @@ const PortfolioPage = () => {
   return (
     <div className="portfolio-page" style={{ display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: bgPrimary }}>
       <GridContainer>
-        <h1 style={{ textAlign: "center", color: colorPrimary }}>Portfolio</h1>
+        <h1 style={{ padding: "1rem 0", fontSize: "3rem", textAlign: "center", color: colorPrimary }}>Portfolio</h1>
         <GridRow breakpoints={[700]}>
           {renderProj()}
         </GridRow>

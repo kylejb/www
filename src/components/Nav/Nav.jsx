@@ -2,7 +2,14 @@ import { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useThemeContext } from '../../contexts/theme/ThemeContext';
 import { toElement as scrollToElement } from '../../utils/scroll';
-import { StyledNav } from './styledComponents';
+import { Dice } from '@styled-icons/ionicons-solid/Dice';
+import {
+  StyledNav,
+  NavMenu,
+  NavMenuItem,
+  ThemeWand,
+  ThemeWandContent
+} from './styledNavComponents';
 
 
 const Nav = () => {
@@ -15,7 +22,6 @@ const Nav = () => {
   const prevScrollY = useRef(0);
   const nav = useRef();
 
-  const stickyClass = isSticky ? 'sticky' : '';
   const stickyStyles = isSticky
     ? { backgroundColor: navAlpha, color: colorPrimary }
     : { backgroundColor: bgPrimary, color: colorPrimary };
@@ -55,34 +61,26 @@ const Nav = () => {
   return (
     <StyledNav
       ref={nav}
-      className={stickyClass}
       style={stickyStyles}
     >
-      <div className="magic-wand bounce-xy" onClick={(e) => switchTheme()}>
-        <button className="fas fa-magic fa-lg" href="#" />
-        <div className="magic-text">Color Me</div>
-      </div>
-      <style jsx="true">
-        {`
-          .menu__item:hover {
-            border-bottom: 2px solid ${colorPrimary};
-          }
-        `}
-      </style>
-      <div className="menu">
-        <div
-          className="menu__item active"
+
+      <ThemeWand onClick={switchTheme}>
+        <Dice size="25" />
+        <ThemeWandContent>Recolor</ThemeWandContent>
+      </ThemeWand>
+
+      <NavMenu>
+        <NavMenuItem
+          styledBorder={colorPrimary}
           onClick={(e) => scrollToPage('.intro-wrapper')}
-        >
-          About
-        </div>
-        <div
-          className="menu__item"
+        >About</NavMenuItem>
+
+        <NavMenuItem
+          styledBorder={colorPrimary}
           onClick={(e) => scrollToPage('.portfolio-page')}
-        >
-          Portfolio
-        </div>
-      </div>
+        >Portfolio</NavMenuItem>
+      </NavMenu>
+
     </StyledNav>
   );
 };

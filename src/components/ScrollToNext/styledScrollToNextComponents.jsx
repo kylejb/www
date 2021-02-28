@@ -11,8 +11,9 @@ export const StyledScroll = styled.div`
 
   }
   .scroll-text {
+    z-index: -99;
     text-align: center;
-    font-size: 0.5rem;
+    font-size: 1.0rem;
     margin-top: -0.125rem;
   }
 

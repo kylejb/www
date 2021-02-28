@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import { useThemeContext } from '../../contexts/theme/ThemeContext';
 import { toElement as scrollToElement } from '../../utils/scroll';
-import { StyledScroll } from './styledComponents';
+import { ChevronUp } from '@styled-icons/ionicons-outline';
+import { StyledScroll } from './styledScrollToPreviousComponents';
 
 
 const ScrollToPrevious = ( props ) => {
@@ -20,9 +21,9 @@ const ScrollToPrevious = ( props ) => {
       className="scroll-to-previous"
       onClick={(e) => scrollToPrevious()}
     >
-      <div className="arrow bounce" style={{ color: colorPrimary }} aria-label="Click me to go back to the previous section">
-        <button className="fas fa-chevron-up fa-2x" href="#" />
-        <div className="scroll-text">Click Me</div>
+      <div className="arrow" style={{ color: colorPrimary }} aria-label="Click me to go back to the previous section">
+        <div className="scroll-text">About</div>
+        <ChevronUp title="Click Me" size="40"/>
       </div>
     </StyledScroll>
   );
