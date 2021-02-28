@@ -9,6 +9,7 @@ export const StyledNav = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  z-index: 99;
 
   .magic-wand {
     cursor: pointer;
