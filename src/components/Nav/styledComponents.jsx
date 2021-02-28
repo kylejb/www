@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 
-export const StyledNav = styled.div`
-  position: fixed;
+export const StyledNav = styled.nav`
+  position: -webkit-sticky;
+  position: sticky;
   top: 0;
   width: 100%;
   height: 3rem;
