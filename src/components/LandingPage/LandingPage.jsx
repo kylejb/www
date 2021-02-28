@@ -1,5 +1,4 @@
 import { useThemeContext } from '../../contexts/theme/ThemeContext';
-import PropTypes from 'prop-types';
 import SocialIcons from '../SocialIcons/index';
 import ScrollToNext from '../ScrollToNext/index';
 import { Container } from './styledComponents';
@@ -28,8 +27,3 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
-
-
-LandingPage.propTypes = {
-  theme: PropTypes.any
-};
