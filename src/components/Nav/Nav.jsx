@@ -36,7 +36,8 @@ const Nav = () => {
       if (prevScrollY.current > currentScrollY && !goingUp) {
         setGoingUp(true);
       }
-      const domRect = nav.current.getBoundingClientRect()
+      const domRect = nav.current.getBoundingClientRect();
+
       if (currentScrollY > domRect.height) {
         setIsSticky(true);
       } else {
