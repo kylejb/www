@@ -6,7 +6,6 @@ import { Container } from './styledComponents';
 
 const LandingPage = () => {
   const theme = useThemeContext();
-
   const { currentTheme: { bgPrimary, colorPrimary } } = theme;
 
 
