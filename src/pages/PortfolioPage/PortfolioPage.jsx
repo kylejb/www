@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import PortfolioCard from '../../components/PortfolioCard';
 import ScrollToPrevious from '../../components/ScrollToPrevious';
 import { useThemeContext } from '../../contexts/theme/ThemeContext';
@@ -21,9 +20,9 @@ const PortfolioPage = () => {
   ));
 
   return (
-    <div className="portfolio-page" style={{ backgroundColor: bgPrimary }}>
+    <div className="portfolio-page" style={{ display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: bgPrimary }}>
       <GridContainer>
-        <h1 style={{ color: colorPrimary }}>Portfolio</h1>
+        <h1 style={{ textAlign: "center", color: colorPrimary }}>Portfolio</h1>
         <GridRow breakpoints={[700]}>
           {renderProj()}
         </GridRow>
@@ -31,10 +30,6 @@ const PortfolioPage = () => {
       </GridContainer>
     </div>
   );
-};
-
-PortfolioPage.propTypes = {
-  theme: PropTypes.any
 };
 
 export default PortfolioPage;
