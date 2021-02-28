@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components'
+import reset from './_reset';
 
 const GlobalStyle = createGlobalStyle`
+  ${reset}
 
   /* Typography */
   @font-face {
@@ -36,14 +38,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    box-sizing: border-box;
     font-size: 16px;
-  }
-
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
   }
 
   body,
@@ -56,8 +51,6 @@ const GlobalStyle = createGlobalStyle`
   p,
   ol,
   ul {
-    margin: 0;
-    padding: 0;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
   }
@@ -74,19 +67,9 @@ const GlobalStyle = createGlobalStyle`
     font-weight: bold;
   }
 
-  ol,
-  ul {
-    list-style: none;
-  }
-
   img {
     max-width: 100%;
     height: auto;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
   }
 
   ::-webkit-scrollbar {
