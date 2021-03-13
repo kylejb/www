@@ -8,11 +8,11 @@
     "@styled-icons/ionicons-outline": "^10.28.0",
     "@styled-icons/ionicons-solid": "^10.28.0",
     "gh-pages": "^3.1.0",
-    "next": "^10.0.7",
+    "next": "^10.0.8",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "styled-components": "^5.2.1",
-    "typescript": "^4.1.2"
+    "typescript": "^4.2.3"
   },
   "scripts": {
     "dev": "next dev",
