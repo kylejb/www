@@ -4,21 +4,22 @@ import reset from './_reset';
 const GlobalStyle = createGlobalStyle`
   ${reset}
 
-  /* Typography */
   @font-face {
-    font-family: 'Roboto';
+    font-family: 'Roboto-Thin';
     font-style: normal;
     font-weight: 100;
     src: local('Roboto Thin'), local('Roboto-Thin'),
     url('/fonts/roboto-100.woff2') format('woff2');
+    font-display: fallback;
   }
 
   @font-face {
-    font-family: 'Roboto';
+    font-family: 'Roboto-Light';
     font-style: normal;
     font-weight: 300;
     src: local('Roboto Light'), local('Roboto-Light'),
     url('/fonts/roboto-300.woff2') format('woff2');
+    font-display: fallback;
   }
 
   @font-face {
@@ -27,14 +28,16 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     src: local('Roboto'), local('Roboto-Regular'),
     url('/fonts/roboto-400.woff2') format('woff2');
+    font-display: fallback;
   }
 
   @font-face {
-    font-family: 'Roboto';
+    font-family: 'Roboto-Black';
     font-style: normal;
     font-weight: 900;
     src: local('Roboto Black'), local('Roboto-Black'),
     url('/fonts/roboto-900.woff2') format('woff2');
+    font-display: fallback;
   }
 
   html {
@@ -69,7 +72,7 @@ const GlobalStyle = createGlobalStyle`
 
   img {
     max-width: 100%;
-    height: auto;
+    height: fallback;
   }
 
   ::-webkit-scrollbar {
