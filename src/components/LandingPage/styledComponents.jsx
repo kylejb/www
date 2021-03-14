@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { maxDownMediaBreakpoints } from '../../styles/_mediaQueries';
 
 export const Container = styled.div`
   min-height: 100vh;
@@ -15,9 +16,9 @@ export const Container = styled.div`
     padding: 3.25rem 1.5rem 1rem;
     text-align: center;
 
-    @include breakpoint-small-down {
+    ${maxDownMediaBreakpoints.mobileL`
       padding: 4.25rem 1.5rem 1rem;
-    }
+    `}
 
     .intro-wrapper {
       flex: auto;
@@ -33,10 +34,10 @@ export const Container = styled.div`
         line-height: 4rem;
         padding-bottom: 1rem;
 
-        @include breakpoint-small-down {
+        ${maxDownMediaBreakpoints.mobileL`
           font-size: 3rem;
           line-height: 3.5rem;
-        }
+        `}
       }
 
       > .tagline {
@@ -44,9 +45,9 @@ export const Container = styled.div`
         margin: 1.5rem 0;
         font-weight: 300;
 
-        @include breakpoint-small-down {
+        ${maxDownMediaBreakpoints.mobileL`
           font-size: 1.25rem;
-        }
+        `}
       }
     }
   }

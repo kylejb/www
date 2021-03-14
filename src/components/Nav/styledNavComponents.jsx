@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { maxDownMediaBreakpoints } from '../../styles/_mediaQueries';
 
 
 export const StyledNav = styled.nav`
@@ -11,6 +12,10 @@ export const StyledNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  ${maxDownMediaBreakpoints.mobileL`
+    height: 4rem;
+  `}
 `;
 
 export const NavMenu = styled.div`

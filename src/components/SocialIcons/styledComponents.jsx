@@ -1,13 +1,14 @@
 import styled from 'styled-components';
+import { maxDownMediaBreakpoints } from '../../styles/_mediaQueries';
 
 
 export const StyledContainer = styled.div`
   padding: 0.25rem 0;
   font-size: 3rem;
 
-  @include breakpoint-small-down {
+  ${maxDownMediaBreakpoints.mobileL`
     font-size: 2.5rem;
-  }
+  `}
 
   a {
     padding: 0 0.625rem;
@@ -17,11 +18,11 @@ export const StyledContainer = styled.div`
       width: 2.7rem;
       height: 2.7rem;
 
-      @include breakpoint-small-down {
+      ${maxDownMediaBreakpoints.mobileL`
         margin-bottom: -0.225rem;
         width: 2.25rem;
         height: 2.25rem;
-      }
+      `}
     }
   }
 
@@ -56,4 +57,3 @@ export const StyledAnchorTag = styled.a`
     animation-iteration-count: 1;
   }
 `;
-
