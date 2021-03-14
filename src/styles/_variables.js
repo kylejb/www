@@ -1,9 +1,9 @@
 export const breakpoints = {
-    xsmall: '0px', // mobile-m max=375px
-    small: '376px', // mobile-l max=425px
-    medium: '426px', // tablet max=768px
-    large: '769px', // laptop-m max=1024px => ipad pro falls under this
-    xlarge: '1025px', // laptop-l max=1440px
-    xxlarge: '1440px', // 4k max=2560px
-    xxxlarge: '2560px'
+    xsmall: 0, // mobile-m max=375
+    small: 376, // mobile-l max=425
+    medium: 426, // tablet max=768
+    large: 769, // laptop-m max=1024 => ipad pro falls under this
+    xlarge: 1025, // laptop-l max=1440
+    xxlarge: 1440, // 4k max=2560
+    xxxlarge: 2560
 };
