@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import reset from './_reset';
+import { media } from './_mediaQueries';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -41,7 +42,24 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    font-size: 16px;
+    font-size: 12px;
+
+
+    ${media.mobileL`
+      font-size: 14px;
+    `}
+
+    ${media.tablet`
+      font-size: 16px;
+    `}
+
+    ${media.laptopM`
+      font-size: 18px;
+    `}
+
+    ${media.desktopM`
+      font-size: 20px;
+    `}
   }
 
   body,
