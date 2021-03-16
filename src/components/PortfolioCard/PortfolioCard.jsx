@@ -8,10 +8,10 @@ import {
   CardFront,
 } from './expStyledComponent';
 
-const ExpComponent = ( props ) => {
+const ExpComponent = (props) => {
 
   const theme = useThemeContext();
-  const { currentTheme: {colorPrimary, colorAlternate, textAlternate, bgPrimary } } = theme;
+  const { currentTheme: { colorPrimary, colorAlternate, textAlternate, bgPrimary } } = theme;
 
   const flipCard = (event) => {
     event.currentTarget.classList.toggle('flipped');
@@ -20,7 +20,7 @@ const ExpComponent = ( props ) => {
 
 
   return (
-    <CardWrapper style={{margin: "20px"}}>
+    <CardWrapper>
       <Card onClick={flipCard}
         styledBackgroundColor={colorPrimary}
         styledColor={colorAlternate}
@@ -28,8 +28,8 @@ const ExpComponent = ( props ) => {
         <CardFront
           styledBackgroundColor={colorPrimary}
           styledColor={colorAlternate}
-          >
-          <PortfolioCardFront project={props.project}/>
+        >
+          <PortfolioCardFront project={props.project} />
         </CardFront>
         <CardBack
           styledBackgroundColor={colorPrimary}
