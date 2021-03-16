@@ -7,3 +7,7 @@ export const breakpoints = {
     xxlarge: 1440, // 4k max=2560
     xxxlarge: 2560
 };
+
+export const flipDurationVal = '1s';
+export const perspectiveVal = '1000px';
+export const degreeVal = '90deg';
