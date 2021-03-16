@@ -11,7 +11,7 @@ import {
 const PortfolioCard = (props) => {
 
   const theme = useThemeContext();
-  const { currentTheme: { colorPrimary, colorAlternate, textAlternate, bgPrimary } } = theme;
+  const { currentTheme: { colorPrimary, colorAlternate } } = theme;
 
   const flipCard = (event) => {
     event.currentTarget.classList.toggle('flipped');
