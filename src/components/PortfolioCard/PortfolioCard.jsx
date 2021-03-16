@@ -6,9 +6,9 @@ import {
   Card,
   CardBack,
   CardFront,
-} from './expStyledComponent';
+} from './styledComponent';
 
-const ExpComponent = (props) => {
+const PortfolioCard = (props) => {
 
   const theme = useThemeContext();
   const { currentTheme: { colorPrimary, colorAlternate, textAlternate, bgPrimary } } = theme;
@@ -42,4 +42,4 @@ const ExpComponent = (props) => {
   );
 };
 
-export default ExpComponent;
+export default PortfolioCard;

@@ -1,4 +1,4 @@
-import { CardDescription, CardTitle } from '../expStyledComponent';
+import { CardDescription, CardTitle } from '../styledComponent';
 
 const PortfolioCardFront = ({ project }) => {
   return (
@@ -24,13 +24,13 @@ const PortfolioCardFront = ({ project }) => {
 
       <div className='portfolio-card-content__links'>
         {project.github.link.length > 1
-          ?project.github.link.map(repo =>
-              <a
-                key={repo.label}
-                target="_blank"
-                rel="noopener noreferrer"
-                href={repo.link}
-              >{repo.label}</a>)
+          ? project.github.link.map(repo =>
+            <a
+              key={repo.label}
+              target="_blank"
+              rel="noopener noreferrer"
+              href={repo.link}
+            >{repo.label}</a>)
           : (
             <a
               target="_blank"

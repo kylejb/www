@@ -1,40 +1,20 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css } from 'styled-components';
+import { maxDownMediaBreakpoints } from '../../styles/_mediaQueries';
+import { perspectiveVal } from "../../styles/_variables";
 
-const border_radius = '2px';
-const card_size = '25rem';
-const flip_duration = '1s';
-const perspective = '1000px';
-const degree = '90deg';
+// Helper function to convert pixels to rems (remy)
+const remy = px => `${px / 16}rem`
 
-const back_flip_1 = keyframes`
-  0% {transform: rotateY(0deg); z-index: 1}
-  50% {transform: rotateY(${degree}) perspective(${perspective}); z-index: 1}
-  100% {transform: rotateY(${degree}); z-index: -1}
-`;
-
-const back_flip_2 = keyframes`
-  0% {transform: rotateY(-${degree}); z-index: -1}
-  50% {transform: rotateY(-${degree}) perspective(${perspective}); z-index: -1}
-  100% {transform: rotateY(0deg); z-index: 1}
-`;
-
-const front_flip_1 = keyframes`
-  0% {transform: rotateY(-${degree}); z-index: -1}
-  50% {transform: rotateY(-${degree}) perspective(${perspective}); z-index: -1}
-  100% {transform: rotateY(0deg); z-index: 1}
-`;
-
-const front_flip_2 = keyframes`
-  0% {transform: rotateY(0deg); z-index: 1}
-  50% {transform: rotateY(${degree}) perspective(${perspective}); z-index: 1}
-  100% {transform: rotateY(${degree}); z-index: -1}
+export const CardWrapper = styled.div`
+  margin: 20px;
+  width: 300px;
 `;
 
 // Flipping card
-export const Card = styled.div`
+export const Card = styled.article`
   position: relative;
   width: 100%;
-  height: 100%;
+  min-height: ${remy(380)};
   text-align: center;
   -webkit-transition: transform 0.1s;
     transition: transform 0.1s;
@@ -42,58 +22,77 @@ export const Card = styled.div`
     transform-style: preserve-3d;
 
   cursor: pointer;
-  perspective: 1000px;
+  perspective: ${perspectiveVal};
   transition: all .25s ease-in-out;
 
   &:focus,
   &:hover {
-    box-shadow: 0 0 40px rgba(0,0,0,.15);
+    box-shadow: 0 0 ${remy(40)} rgba(0,0,0,.15);
   }
 
   &.flipped {
     & > div:first-of-type { // frontside of the card
-      transform: perspective(1000px) rotateY(-180deg);
+      transform: perspective(${perspectiveVal}) rotateY(-180deg);
       transform-style: preserve-3d;
     }
 
     & > div:last-of-type { // backside of the card
-      transform: perspective(1000px) rotateY(0deg);
+      transform: perspective(${perspectiveVal}) rotateY(0deg);
       transform-style: preserve-3d;
     }
   }
-`;
-
+`
 
 // Card sides
 export const CardSide = css`
   --webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+  position: absolute;
   display: flex;
   flex-direction: column;
-  align-items: top;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  padding: 24px;
+  padding: ${remy(24)};
   transition: all .25s ease-in-out;
 `;
 
 // Card side - front
 export const CardFront = styled.div`
+  background-color: ${({ styledBackgroundColor }) => styledBackgroundColor};
+  color: ${({ styledColor }) => styledColor};
   ${CardSide};
+
+  font-weight: bold;
+  text-align: center;
+  ${maxDownMediaBreakpoints.mobileL`
+    width: 15rem;
+  `}
 `;
 
 // Card side - back
 export const CardBack = styled.div`
+  background-color: ${({ styledBackgroundColor }) => styledBackgroundColor};
+  color: ${({ styledColor }) => styledColor};
   ${CardSide};
+
   transform: rotateY(-180deg);
   transform-style: preserve-3d;
-`;
 
-// Card content
+  ${maxDownMediaBreakpoints.mobileL`
+    width: 15rem;
+  `}
+`;
 
 export const CardTitle = styled.h2`
-  font-size: 21px;
+  background-color: ${({ styledBackgroundColor }) => styledBackgroundColor};
+  color: ${({ styledColor }) => styledColor};
+  font-size: ${remy(21)};
 `;
 
-export const CardDescription = styled.div`
-  font-size: 16px;
+export const CardDescription = styled.span`
+  background-color: ${({ styledBackgroundColor }) => styledBackgroundColor};
+  color: ${({ styledColor }) => styledColor};
+  font-size: ${remy(16)};
 `;

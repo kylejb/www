@@ -1,4 +1,4 @@
-import { CardDescription, CardTitle } from '../expStyledComponent';
+import { CardDescription, CardTitle } from '../styledComponent';
 
 const PortfolioCardBack = ({ project }) => {
   return (
