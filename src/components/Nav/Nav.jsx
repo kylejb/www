@@ -1,21 +1,27 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { ThemeContext } from '../../ThemeContext';
+import { useThemeContext } from '../../contexts/theme/ThemeContext';
 import { toElement as scrollToElement } from '../../utils/scroll';
-import './style.scss';
+import { Dice } from '@styled-icons/ionicons-solid/Dice';
+import {
+  StyledNav,
+  NavMenu,
+  NavMenuItem,
+  ThemeWand,
+  ThemeWandContent
+} from './styledNavComponents';
 
 
 const Nav = () => {
-  const theme = useContext(ThemeContext);
+  const theme = useThemeContext();
   const { currentTheme: { colorPrimary, bgPrimary, navAlpha }, switchTheme } = theme;
 
   const [isSticky, setIsSticky] = useState(false);
   const [goingUp, setGoingUp] = useState(false);
-  
+
   const prevScrollY = useRef(0);
   const nav = useRef();
 
-  const stickyClass = isSticky ? 'sticky' : '';
   const stickyStyles = isSticky
     ? { backgroundColor: navAlpha, color: colorPrimary }
     : { backgroundColor: bgPrimary, color: colorPrimary };
@@ -36,7 +42,8 @@ const Nav = () => {
       if (prevScrollY.current > currentScrollY && !goingUp) {
         setGoingUp(true);
       }
-      const domRect = nav.current.getBoundingClientRect()
+      const domRect = nav.current.getBoundingClientRect();
+
       if (currentScrollY > domRect.height) {
         setIsSticky(true);
       } else {
@@ -44,45 +51,37 @@ const Nav = () => {
       }
       prevScrollY.current = currentScrollY;
     };
-    
+
     window.addEventListener("scroll", handleScroll, { passive: true });
-    
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, [goingUp, nav]);
- 
-  
+
+
   return (
-    <nav
+    <StyledNav
       ref={nav}
-      className={stickyClass}
       style={stickyStyles}
     >
-      <div className="magic-wand bounce-xy" onClick={(e) => switchTheme()}>
-        <button className="fas fa-magic fa-lg" href="#" />
-        <div className="magic-text">Color Me</div>
-      </div>
-      <style jsx="true">
-        {`
-          .menu__item:hover {
-            border-bottom: 2px solid ${colorPrimary};
-          }
-        `}
-      </style>
-      <div className="menu">
-        <div
-          className="menu__item active"
+
+      <ThemeWand onClick={switchTheme}>
+        <Dice size="25" />
+        <ThemeWandContent>Recolor</ThemeWandContent>
+      </ThemeWand>
+
+      <NavMenu>
+        <NavMenuItem
+          styledBorder={colorPrimary}
           onClick={(e) => scrollToPage('.intro-wrapper')}
-        >
-          About
-        </div>
-        <div
-          className="menu__item"
+        >About</NavMenuItem>
+
+        <NavMenuItem
+          styledBorder={colorPrimary}
           onClick={(e) => scrollToPage('.portfolio-page')}
-        >
-          Portfolio
-        </div>
-      </div>
-    </nav>
+        >Portfolio</NavMenuItem>
+      </NavMenu>
+
+    </StyledNav>
   );
 };
 

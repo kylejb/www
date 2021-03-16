@@ -1,43 +1,45 @@
-import React, { useState } from 'react';
+import { useThemeContext } from '../../contexts/theme/ThemeContext';
 import PortfolioCardBack from './Card/back.component';
 import PortfolioCardFront from './Card/front.component';
-import './style.scss';
+import {
+  CardWrapper,
+  Card,
+  CardBack,
+  CardFront,
+} from './styledComponent';
 
+const PortfolioCard = (props) => {
 
-const PortfolioCard = ( props ) => {
-  const [ flipped, setFlipped ] = useState(null),
-        [ clicked, setClicked ] = useState(null);
-  const cardFlipClassName = (flipped ? 'portfolio-card-back-flip' : 'portfolio-card-front-flip');
-  
-  
-  const flip = () => {
-    setFlipped(!flipped);
-    setClicked(true);
+  const theme = useThemeContext();
+  const { currentTheme: { colorPrimary, colorAlternate } } = theme;
+
+  const flipCard = (event) => {
+    event.currentTarget.classList.toggle('flipped');
   };
 
 
-  return (
-    <div 
-      className='portfolio-card'
-      >
-        <div className='portfolio-card-inner'>
-          <div 
-            className={'portfolio-card--front ' + (clicked ? cardFlipClassName : '')}
-            onClick={flip}
-          >
-            <PortfolioCardFront project={props.project} />
-          </div>
 
-          <div 
-            className={'portfolio-card--back ' + (clicked ? cardFlipClassName : '')}
-            onClick={flip}
-          >
-            <PortfolioCardBack project={props.project} />
-          </div>
-        </div>
-    </div>
+  return (
+    <CardWrapper>
+      <Card onClick={flipCard}
+        styledBackgroundColor={colorPrimary}
+        styledColor={colorAlternate}
+      >
+        <CardFront
+          styledBackgroundColor={colorPrimary}
+          styledColor={colorAlternate}
+        >
+          <PortfolioCardFront project={props.project} />
+        </CardFront>
+        <CardBack
+          styledBackgroundColor={colorPrimary}
+          styledColor={colorAlternate}
+        >
+          <PortfolioCardBack project={props.project} />
+        </CardBack>
+      </Card>
+    </CardWrapper>
   );
 };
-
 
 export default PortfolioCard;

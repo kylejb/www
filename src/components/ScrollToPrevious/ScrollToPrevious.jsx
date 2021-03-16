@@ -1,30 +1,31 @@
-import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { ThemeContext } from '../../ThemeContext';
+import { useThemeContext } from '../../contexts/theme/ThemeContext';
 import { toElement as scrollToElement } from '../../utils/scroll';
-import './style.scss';
+import { ChevronUp } from '@styled-icons/ionicons-outline';
+import { StyledScroll } from './styledScrollToPreviousComponents';
+
 
 const ScrollToPrevious = ( props ) => {
-  const theme = useContext(ThemeContext);
+  const theme = useThemeContext();
   const { currentTheme: { colorPrimary } } = theme;
 
   const scrollToPrevious = () => {
     const { pageSelector } = props;
     const nextPage = document.querySelector(pageSelector);
     scrollToElement(nextPage);
-  }
+  };
 
 
   return (
-    <div
+    <StyledScroll
       className="scroll-to-previous"
       onClick={(e) => scrollToPrevious()}
     >
-      <div className="arrow bounce" style={{ color: colorPrimary }} aria-label="Click me to go back to the previous section">
-        <button className="fas fa-chevron-up fa-2x" href="#" />
-        <div className="scroll-text">Click Me</div>
+      <div className="arrow" style={{ color: colorPrimary }} aria-label="Click me to go back to the previous section">
+        <div className="scroll-text">About</div>
+        <ChevronUp title="Click Me" size="40"/>
       </div>
-    </div>
+    </StyledScroll>
   );
 };
 

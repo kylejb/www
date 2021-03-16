@@ -1,4 +1,7 @@
-.scroll-to-previous {
+import styled from 'styled-components';
+
+
+export const StyledScroll = styled.div`
   cursor: pointer;
 
   .arrow {
@@ -7,8 +10,9 @@
     padding-bottom: 0.5rem;
 
     .scroll-text {
+      z-index: -99;
       text-align: center;
-      font-size: 0.5rem;
+      font-size: 1.0rem;
       margin-top: -0.125rem;
     }
   }
@@ -32,4 +36,4 @@
       transform: translateY(-15px);
     }
   }
-}
+`;

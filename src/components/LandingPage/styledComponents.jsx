@@ -1,7 +1,7 @@
-@import '../../styles/_breakpoints.scss';
+import styled from 'styled-components';
+import { maxDownMediaBreakpoints } from '../../styles/_mediaQueries';
 
-
-.landing-page {
+export const Container = styled.div`
   min-height: 100vh;
   display: flex;
   flex: 0 1 auto;
@@ -16,9 +16,9 @@
     padding: 3.25rem 1.5rem 1rem;
     text-align: center;
 
-    @include breakpoint-small-down {
+    ${maxDownMediaBreakpoints.mobileL`
       padding: 4.25rem 1.5rem 1rem;
-    }
+    `}
 
     .intro-wrapper {
       flex: auto;
@@ -34,10 +34,10 @@
         line-height: 4rem;
         padding-bottom: 1rem;
 
-        @include breakpoint-small-down {
+        ${maxDownMediaBreakpoints.mobileL`
           font-size: 3rem;
           line-height: 3.5rem;
-        }
+        `}
       }
 
       > .tagline {
@@ -45,20 +45,10 @@
         margin: 1.5rem 0;
         font-weight: 300;
 
-        @include breakpoint-small-down {
+        ${maxDownMediaBreakpoints.mobileL`
           font-size: 1.25rem;
-        }
-      }
-    }
-
-    .browser-notes {
-      font-size: 0.75rem;
-
-      span {
-        border-width: 1px;
-        border-style: solid;
-        padding: 0.125rem 0.5rem;
+        `}
       }
     }
   }
-}
+`;

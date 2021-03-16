@@ -1,32 +1,48 @@
-import React from 'react';
+import { CardDescription, CardTitle, CardIcon, CardLink, CardLinkWrapper } from '../styledComponent';
 
+const PortfolioCardFront = ({ project }) => {
+  return (
+    <>
+      <CardTitle>
+        {project.title}
+      </CardTitle>
 
-const PortfolioCardFront = ( props ) => {
+      <CardDescription>
+        {project.desc}
+      </CardDescription>
 
-    
-    return (     
-        <>       
-            <div className='portfolio-card-content__title'>
-                {props.project.title}
-            </div>
+      <CardLinkWrapper className='portfolio-card-content__icon'>
+        {project.icons.map(icon =>
+          <CardLink
+            key={icon.id}
+            target="_blank"
+            rel="noopener noreferrer"
+            href={icon.link}
+          ><CardIcon className={icon.classname}></CardIcon></CardLink>)
+        }
+      </CardLinkWrapper>
 
-            <div className='portfolio-card-content__desc'>
-                {props.project.desc}
-            </div>
-
-            <div className='portfolio-card-content__icon'>
-                {props.project.icons.map(icon => <a target="_blank" rel="noopener noreferrer" href={icon.link} key={icon.id}><i className={icon.classname}></i></a>)}
-            </div>
-
-            <div className='portfolio-card-content__links'>
-                { props.project.github.link.length > 1 ? 
-                    props.project.github.link.map(repo => {
-                        return <a key={repo.label} target="_blank" rel="noopener noreferrer" href={repo.link}>{repo.label}</a>
-                    }) : (<a target="_blank" rel="noopener noreferrer" href={props.project.github.link[0]}>{props.project.github.label}</a>)
-                }
-            </div>
-        </>
-    );
+      <CardLinkWrapper className='portfolio-card-content__links'>
+        {project.github.link.length > 1
+          ? project.github.link.map(repo =>
+            <CardLink
+              key={repo.label}
+              target="_blank"
+              rel="noopener noreferrer"
+              href={repo.link}
+            >{repo.label}</CardLink>)
+          : (
+            <CardLink
+              target="_blank"
+              rel="noopener noreferrer"
+              href={project.github.link[0]}
+            >
+              {project.github.label}
+            </CardLink>)
+        }
+      </CardLinkWrapper>
+    </>
+  );
 };
 
 

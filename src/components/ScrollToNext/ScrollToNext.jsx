@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { ThemeContext } from '../../ThemeContext';
+import { useThemeContext } from '../../contexts/theme/ThemeContext';
 import { toElement as scrollToElement } from '../../utils/scroll';
-import './style.scss';
+import { ChevronDown } from '@styled-icons/ionicons-outline';
+import { StyledScroll } from './styledScrollToNextComponents';
 
 
-const ScrollToNext = (props) => {
-  const theme = useContext(ThemeContext);
+const ScrollToNext = ( props ) => {
+  const theme = useThemeContext();
   const { currentTheme: { colorPrimary } } = theme;
 
   const scrollToNext = () => {
@@ -14,15 +14,15 @@ const ScrollToNext = (props) => {
     const nextPage = document.querySelector(pageSelector);
     scrollToElement(nextPage);
   };
-  
+
 
   return (
-    <div className="scroll-to-next" onClick={(e) => scrollToNext()} aria-label="Click me to view next section">
-      <div className="arrow bounce" style={{ color: colorPrimary }}>
-        <div className="scroll-text">Click Me</div>
-        <button className="fas fa-chevron-down fa-2x" href="#" />
+    <StyledScroll className="scroll-to-next" onClick={(e) => scrollToNext()} aria-label="Click me to view next section">
+      <div className="arrow" style={{ color: colorPrimary }}>
+        <div className="scroll-text">Portfolio</div>
+        <ChevronDown title="Click Me" size="30"/>
       </div>
-    </div>
+    </StyledScroll>
   );
 };
 
