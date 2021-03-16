@@ -89,10 +89,53 @@ export const CardTitle = styled.h2`
   background-color: ${({ styledBackgroundColor }) => styledBackgroundColor};
   color: ${({ styledColor }) => styledColor};
   font-size: ${remy(21)};
+  flex: 1;
+  padding: 1rem 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 400;
+  text-align: center;
+
+  ${maxDownMediaBreakpoints.mobileL`
+    font-size: 1.25rem;
+  `}
 `;
 
 export const CardDescription = styled.span`
   background-color: ${({ styledBackgroundColor }) => styledBackgroundColor};
   color: ${({ styledColor }) => styledColor};
-  font-size: ${remy(16)};
+  font-size: ${remy(14)};
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.5rem;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.25rem;
+
+  ${maxDownMediaBreakpoints.mobileL`
+    font-size: 0.875rem;
+  `}
+`;
+
+export const CardLinkWrapper = styled.div`
+  padding: 0 0 0.75rem;
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.875rem;
+  font-weight: 400;
+`;
+
+export const CardLink = styled.a`
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid inherit;
+
+  :hover {
+    cursor: pointer;
+    border-bottom: 2px solid inherit;
+  }
+`;
+
+export const CardIcon = styled.i`
+  font-size: 1.5rem;
+  font-weight: 100;
+  text-align: center;
 `;

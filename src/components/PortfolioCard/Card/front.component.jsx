@@ -1,4 +1,4 @@
-import { CardDescription, CardTitle } from '../styledComponent';
+import { CardDescription, CardTitle, CardIcon, CardLink, CardLinkWrapper } from '../styledComponent';
 
 const PortfolioCardFront = ({ project }) => {
   return (
@@ -11,36 +11,36 @@ const PortfolioCardFront = ({ project }) => {
         {project.desc}
       </CardDescription>
 
-      <div className='portfolio-card-content__icon'>
+      <CardLinkWrapper className='portfolio-card-content__icon'>
         {project.icons.map(icon =>
-          <a
+          <CardLink
             key={icon.id}
             target="_blank"
             rel="noopener noreferrer"
             href={icon.link}
-          ><i className={icon.classname}></i></a>)
+          ><CardIcon className={icon.classname}></CardIcon></CardLink>)
         }
-      </div>
+      </CardLinkWrapper>
 
-      <div className='portfolio-card-content__links'>
+      <CardLinkWrapper className='portfolio-card-content__links'>
         {project.github.link.length > 1
           ? project.github.link.map(repo =>
-            <a
+            <CardLink
               key={repo.label}
               target="_blank"
               rel="noopener noreferrer"
               href={repo.link}
-            >{repo.label}</a>)
+            >{repo.label}</CardLink>)
           : (
-            <a
+            <CardLink
               target="_blank"
               rel="noopener noreferrer"
               href={project.github.link[0]}
             >
               {project.github.label}
-            </a>)
+            </CardLink>)
         }
-      </div>
+      </CardLinkWrapper>
     </>
   );
 };
