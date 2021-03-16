@@ -1,6 +1,6 @@
 import PortfolioCard from '../../components/PortfolioCard';
 import { useThemeContext } from '../../contexts/theme/ThemeContext';
-import { projects } from './projects';
+import { projects } from '../../utils/projects';
 import { Container, Grid } from './styledComponents';
 
 
