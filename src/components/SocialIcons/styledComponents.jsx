@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { maxDownMediaBreakpoints } from '../../styles/_mediaQueries';
+import { maxDownMediaBreakpoints } from 'styles/_mediaQueries';
 
 
 export const StyledContainer = styled.div`

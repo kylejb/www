@@ -1,5 +1,5 @@
-import { useThemeContext } from '../../contexts/theme/ThemeContext';
-import SocialIcons from '../SocialIcons/index';
+import { useThemeContext } from 'contexts/theme/ThemeContext';
+import SocialIcons from 'components/SocialIcons/index';
 import { Container } from './styledComponents';
 
 
