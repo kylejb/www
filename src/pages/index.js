@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import LandingPage from 'components/LandingPage';
-import PortfolioPage from 'components/PortfolioPage';
 import Nav from 'components/Nav';
+import LandingPage from 'components/LandingPage';
 import AboutPage from 'components/AboutPage';
+import PortfolioPage from 'components/PortfolioPage';
 
 export default function Home() {
     return (
