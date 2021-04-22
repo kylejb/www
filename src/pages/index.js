@@ -8,7 +8,6 @@ export default function Home() {
         <div>
             <Head>
                 <title>kyleburda</title>
-                <link rel="icon" href="/favicon.ico" />
                 <script src="https://kit.fontawesome.com/70a9a273b4.js" crossOrigin="anonymous"></script>
             </Head>
 
