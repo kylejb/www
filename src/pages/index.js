@@ -2,6 +2,7 @@ import Head from 'next/head';
 import LandingPage from 'components/LandingPage';
 import PortfolioPage from 'components/PortfolioPage';
 import Nav from 'components/Nav';
+import AboutPage from 'components/AboutPage';
 
 export default function Home() {
     return (
@@ -13,6 +14,7 @@ export default function Home() {
 
             <Nav />
             <LandingPage />
+            <AboutPage />
             <PortfolioPage />
         </div>
     );
