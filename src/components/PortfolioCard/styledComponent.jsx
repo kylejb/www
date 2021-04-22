@@ -69,6 +69,11 @@ export const CardFront = styled.div`
   ${maxDownMediaBreakpoints.mobileL`
     width: 15rem;
   `}
+
+  a:hover {
+      color: #ffb727;
+      border-bottom: 2px solid ${({ styledColor }) => styledColor};
+  }
 `;
 
 // Card side - back
