@@ -25,7 +25,7 @@ export const projects = [{
 }, {
     id: 2,
     title: 'JobMate',
-    desc: 'A better way to find and apply to jobs.',
+    desc: 'Empowers job seekers to easily find and apply for relevant jobs.',
     icons: [{
         id: 1,
         type: 'database',
