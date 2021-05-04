@@ -19,8 +19,8 @@ export const projects = [{
         link: ['https://github.com/kylejb/nyc-mta-station-arrival-feed'],
         label: 'GitHub'
     },
-    demo: 'assets/demos/Commuter.gif',
-    image: 'assets/images/Commuter.png',
+    back_src: '/assets/demos/Commuter.gif',
+    front_src: '/assets/images/Commuter.png',
 
 }, {
     id: 2,
@@ -43,8 +43,8 @@ export const projects = [{
         link: ['https://github.com/kylejb/JobMate-on-Rails'],
         label: 'GitHub'
     },
-    demo: 'assets/demos/JobMate_on_Rails.gif',
-    image: 'assets/images/JobMate_on_Rails.png',
+    back_src: '/assets/demos/JobMate_on_Rails.gif',
+    front_src: '/assets/images/JobMate_on_Rails.png',
 
 }, {
     id: 3,
@@ -78,8 +78,8 @@ export const projects = [{
             link: 'https://github.com/kylejb/capstone-project_backend'
         }]
     },
-    demo: 'assets/images/WIP.jpg',
-    image: 'assets/images/clairBuoyant.png',
+    back_src: '/assets/images/WIP.jpg',
+    front_src: '/assets/images/clairBuoyant.png',
 
 }, {
     id: 3,
@@ -96,6 +96,6 @@ export const projects = [{
         link: ['https://github.com/kylejb/space-station-tracker'],
         label: 'Github',
     },
-    demo: 'assets/images/WIP.jpg',
-    image: 'assets/images/ISS_Tracker.jpg',
+    back_src: '/assets/images/WIP.jpg',
+    front_src: '/assets/images/ISS_Tracker.jpg',
 }];
