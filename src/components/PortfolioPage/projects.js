@@ -19,7 +19,9 @@ export const projects = [{
         link: ['https://github.com/kylejb/nyc-mta-station-arrival-feed'],
         label: 'GitHub'
     },
-    demo: 'assets/demos/Mod1-Project_DEMO-Full_v2.gif'
+    demo: 'assets/demos/Commuter.gif',
+    image: 'assets/images/Commuter.png',
+
 }, {
     id: 2,
     title: 'JobMate',
@@ -41,42 +43,11 @@ export const projects = [{
         link: ['https://github.com/kylejb/JobMate-on-Rails'],
         label: 'GitHub'
     },
-    demo: '',
+    demo: 'assets/demos/JobMate_on_Rails.gif',
+    image: 'assets/images/JobMate_on_Rails.png',
+
 }, {
     id: 3,
-    title: 'ClassZoom',
-    desc: 'Simplifying remote learning with Zoom API integration.',
-    icons: [{
-        id: 1,
-        type: 'database',
-        name: 'PostgreSQL',
-        classname: 'fas fa-database',
-        link: 'https://www.postgresql.org'
-    }, {
-        id: 2,
-        type: 'backend',
-        name: 'Ruby on Rails',
-        classname: 'fas fa-gem',
-        link: 'https://rubyonrails.org'
-    }, {
-        id: 3,
-        type: 'frontend',
-        name: 'JavaScript',
-        classname: 'fab fa-js',
-        link: 'https://developer.mozilla.org/en-US/docs/Web/javascript'
-    }],
-    github: {
-        link: [{
-            label: 'GitHub (Frontend)',
-            link: 'https://github.com/kylejb/classzoom_frontend'
-        }, {
-            label: 'GitHub (Backend)',
-            link: 'https://github.com/kylejb/classzoom_backend'
-        }]
-    },
-    demo: '',
-}, {
-    id: 4,
     title: 'clairBuoyant',
     desc: 'Aggregating buoy and crowdsourced data for surfers.',
     icons: [{
@@ -100,12 +71,31 @@ export const projects = [{
     }],
     github: {
         link: [{
-            label: 'GitHub (Frontend)',
+            label: 'GitHub (FE)',
             link: 'https://github.com/kylejb/clairbuoyant_frontend'
         }, {
-            label: 'GitHub (Backend)',
+            label: 'GitHub (BE)',
             link: 'https://github.com/kylejb/capstone-project_backend'
         }]
     },
-    demo: '',
+    demo: 'assets/images/WIP.jpg',
+    image: 'assets/images/clairBuoyant.png',
+
+}, {
+    id: 3,
+    title: 'ISS Tracker',
+    desc: 'Provides ISS sighting opportunities based on user location.',
+    icons: [{
+        id: 3,
+        type: 'frontend',
+        name: 'ReactJS',
+        classname: 'fab fa-react',
+        link: 'https://reactjs.org'
+    }],
+    github: {
+        link: ['https://github.com/kylejb/space-station-tracker'],
+        label: 'Github',
+    },
+    demo: 'assets/images/WIP.jpg',
+    image: 'assets/images/ISS_Tracker.jpg',
 }];
