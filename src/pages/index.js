@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Nav from 'components/Nav';
 import LandingPage from 'components/LandingPage';
-import AboutPage from 'components/AboutPage';
 import PortfolioPage from 'components/PortfolioPage';
 
 export default function Home() {
@@ -14,7 +13,6 @@ export default function Home() {
 
             <Nav />
             <LandingPage />
-            <AboutPage />
             <PortfolioPage />
         </div>
     );

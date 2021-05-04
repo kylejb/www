@@ -75,10 +75,10 @@ const Nav = () => {
                     onClick={(e) => scrollToPage('.intro-wrapper')}
                 >Home</NavMenuItem>
 
-                <NavMenuItem
+                {/* <NavMenuItem
                     styledBorder={colorPrimary}
                     onClick={(e) => scrollToPage('.about-wrapper')}
-                >About</NavMenuItem>
+                >About</NavMenuItem> */}
 
                 <NavMenuItem
                     styledBorder={colorPrimary}
