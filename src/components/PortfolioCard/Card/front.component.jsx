@@ -5,14 +5,11 @@ import {
 } from '../styledComponent';
 
 
-const myLoader = ({ src, width, quality }) => {
-    return `http://localhost:3000/${src}?w=${width}&q=${quality || 75}`;
-}
+
 
 const ImageCard = ({ projectImgSrc }) => {
     return (
         <Image
-            loader={myLoader}
             src={projectImgSrc}
             alt="Project cover page image"
             width={1000}
@@ -27,7 +24,12 @@ const PortfolioCardFront = ({ project }) => {
             <CardTitle>
                 {project.title}
             </CardTitle>
-            <ImageCard projectImgSrc={project.image} />
+            <Image
+                src={project.front_src}
+                alt="Project cover page image"
+                width={1000}
+                height={1000}
+            />
             <CardDescription>
                 {project.desc}
             </CardDescription>

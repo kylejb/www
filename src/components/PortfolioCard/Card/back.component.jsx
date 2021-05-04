@@ -7,21 +7,6 @@ import {
     CardLinkWrapper
 } from '../styledComponent';
 
-const myLoader = ({ src, width, quality }) => {
-    return `http://localhost:3000/${src}?w=${width}&q=${quality || 75}`;
-}
-
-const Gif = ({ projectDemoSrc }) => {
-    return (
-        <Image
-            loader={myLoader}
-            src={projectDemoSrc}
-            alt="Gif demo of project"
-            width={1000}
-            height={1000}
-        />
-    );
-}
 
 const PortfolioCardBack = ({ project }) => {
     return (
@@ -30,7 +15,12 @@ const PortfolioCardBack = ({ project }) => {
                 {project.title}
             </CardTitle>
 
-            <Gif projectDemoSrc={project.demo} />
+            <Image
+                src={project.back_src}
+                alt="Gif demo of project"
+                width={1000}
+                height={1000}
+            />
 
             <CardLinkWrapper className='portfolio-card-content__icon'>
                 {project.icons.map(icon =>
