@@ -1,48 +1,40 @@
-import { CardDescription, CardTitle, CardIcon, CardLink, CardLinkWrapper } from '../styledComponent';
+import Image from 'next/image';
+import {
+    CardDescription,
+    CardTitle,
+} from '../styledComponent';
+
+
+
+
+const ImageCard = ({ projectImgSrc }) => {
+    return (
+        <Image
+            src={projectImgSrc}
+            alt="Project cover page image"
+            width={1000}
+            height={1000}
+        />
+    );
+}
 
 const PortfolioCardFront = ({ project }) => {
-  return (
-    <>
-      <CardTitle>
-        {project.title}
-      </CardTitle>
-
-      <CardDescription>
-        {project.desc}
-      </CardDescription>
-
-      <CardLinkWrapper className='portfolio-card-content__icon'>
-        {project.icons.map(icon =>
-          <CardLink
-            key={icon.id}
-            target="_blank"
-            rel="noopener noreferrer"
-            href={icon.link}
-          ><CardIcon className={icon.classname}></CardIcon></CardLink>)
-        }
-      </CardLinkWrapper>
-
-      <CardLinkWrapper className='portfolio-card-content__links'>
-        {project.github.link.length > 1
-          ? project.github.link.map(repo =>
-            <CardLink
-              key={repo.label}
-              target="_blank"
-              rel="noopener noreferrer"
-              href={repo.link}
-            >{repo.label}</CardLink>)
-          : (
-            <CardLink
-              target="_blank"
-              rel="noopener noreferrer"
-              href={project.github.link[0]}
-            >
-              {project.github.label}
-            </CardLink>)
-        }
-      </CardLinkWrapper>
-    </>
-  );
+    return (
+        <>
+            <CardTitle>
+                {project.title}
+            </CardTitle>
+            <Image
+                src={project.front_src}
+                alt="Project cover page image"
+                width={1000}
+                height={1000}
+            />
+            <CardDescription>
+                {project.desc}
+            </CardDescription>
+        </>
+    );
 };
 
 

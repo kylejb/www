@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import { useThemeContext } from '../../contexts/theme/ThemeContext';
-import { toElement as scrollToElement } from '../../utils/scroll';
+import { useThemeContext } from 'contexts/theme/ThemeContext';
+import { toElement as scrollToElement } from 'utils/scroll';
 import { ChevronDown } from '@styled-icons/ionicons-outline';
 import { StyledScroll } from './styledScrollToNextComponents';
 

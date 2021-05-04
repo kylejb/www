@@ -20,14 +20,14 @@ export const Container = styled.div`
       padding: 4.25rem 1.5rem 1rem;
     `}
 
-    .intro-wrapper {
+    .about-wrapper {
       flex: auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
       text-align: center;
 
-      > .intro-name {
+      > .about-header {
         font-family: 'Roboto', sans-serif;
         font-size: 4rem;
         font-weight: bold;
@@ -40,7 +40,7 @@ export const Container = styled.div`
         `}
       }
 
-      > .tagline {
+      > .about-content {
         font-size: 1.375rem;
         margin: 1.5rem 0;
         font-weight: 300;

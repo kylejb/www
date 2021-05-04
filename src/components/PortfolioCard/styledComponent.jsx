@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
-import { maxDownMediaBreakpoints } from '../../styles/_mediaQueries';
-import { perspectiveVal } from "../../styles/_variables";
+import { maxDownMediaBreakpoints } from 'styles/_mediaQueries';
+import { perspectiveVal } from "styles/_variables";
 
 // Helper function to convert pixels to rems (remy)
 const remy = px => `${px / 16}rem`
@@ -83,6 +83,11 @@ export const CardBack = styled.div`
   ${maxDownMediaBreakpoints.mobileL`
     width: 15rem;
   `}
+
+  a:hover {
+    color: #ffb727;
+    border-bottom: 2px solid ${({ styledColor }) => styledColor};
+  }
 `;
 
 export const CardTitle = styled.h2`
