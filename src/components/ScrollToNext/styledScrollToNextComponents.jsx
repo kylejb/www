@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const StyledScroll = styled.div`
   cursor: pointer;
 
@@ -8,12 +7,11 @@ export const StyledScroll = styled.div`
     text-align: center;
     margin: 0 auto;
     padding-bottom: 0.5rem;
-
   }
   .scroll-text {
     z-index: -99;
     text-align: center;
-    font-size: 1.0rem;
+    font-size: 1rem;
     margin-top: -0.125rem;
   }
 

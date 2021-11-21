@@ -1,14 +1,14 @@
-import { useEffect, useRef, useState } from "react";
-import { useThemeContext } from "contexts/theme/ThemeContext";
-import { toElement as scrollToElement } from "utils/scroll";
-import { Dice } from "@styled-icons/ionicons-solid/Dice";
+import { useEffect, useRef, useState } from 'react';
+import { useThemeContext } from 'contexts/theme/ThemeContext';
+import { toElement as scrollToElement } from 'utils/scroll';
+import { Dice } from '@styled-icons/ionicons-solid/Dice';
 import {
   StyledNav,
   NavMenu,
   NavMenuItem,
   ThemeWand,
   ThemeWandContent,
-} from "./styledNavComponents";
+} from './styledNavComponents';
 
 const Nav = () => {
   const theme = useThemeContext();
@@ -51,9 +51,9 @@ const Nav = () => {
       prevScrollY.current = currentScrollY;
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [goingUp, nav]);
 
   return (
@@ -66,7 +66,7 @@ const Nav = () => {
       <NavMenu>
         <NavMenuItem
           styledBorder={colorPrimary}
-          onClick={(e) => scrollToPage(".intro-wrapper")}
+          onClick={(e) => scrollToPage('.intro-wrapper')}
         >
           Home
         </NavMenuItem>
@@ -78,7 +78,7 @@ const Nav = () => {
 
         <NavMenuItem
           styledBorder={colorPrimary}
-          onClick={(e) => scrollToPage(".portfolio-page")}
+          onClick={(e) => scrollToPage('.portfolio-page')}
         >
           Portfolio
         </NavMenuItem>

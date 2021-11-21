@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { maxDownMediaBreakpoints } from 'styles/_mediaQueries';
 
-
 export const StyledNav = styled.nav`
   position: -webkit-sticky;
   position: sticky;
@@ -72,5 +71,4 @@ export const ThemeWandContent = styled.div`
   padding-top: 0.25rem;
 `;
 
-export const ThemeWandBtn = styled.button`
-`;
+export const ThemeWandBtn = styled.button``;

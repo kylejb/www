@@ -1,7 +1,7 @@
-import { useThemeContext } from "contexts/theme/ThemeContext";
-import { toElement as scrollToElement } from "utils/scroll";
-import { ChevronDown } from "@styled-icons/ionicons-outline";
-import { StyledScroll } from "./styledScrollToNextComponents";
+import { useThemeContext } from 'contexts/theme/ThemeContext';
+import { toElement as scrollToElement } from 'utils/scroll';
+import { ChevronDown } from '@styled-icons/ionicons-outline';
+import { StyledScroll } from './styledScrollToNextComponents';
 
 const ScrollToNext = (props) => {
   const theme = useThemeContext();

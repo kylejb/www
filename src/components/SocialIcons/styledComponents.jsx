@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { maxDownMediaBreakpoints } from 'styles/_mediaQueries';
 
-
 export const StyledContainer = styled.div`
   padding: 0.25rem 0;
   font-size: 3rem;
@@ -43,7 +42,7 @@ export const StyledContainer = styled.div`
 `;
 
 export const StyledAnchorTag = styled.a`
-  color: ${props => props.themeColor};
+  color: ${(props) => props.themeColor};
   display: inline-block;
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px transparent;

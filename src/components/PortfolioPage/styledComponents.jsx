@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { maxDownMediaBreakpoints } from 'styles/_mediaQueries';
 
-
 export const Container = styled.div`
   padding-top: 2rem;
   min-height: 100vh;
@@ -25,7 +24,6 @@ export const Grid = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
 
   ${maxDownMediaBreakpoints.mobileL`
     flex-direction: column;

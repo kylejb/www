@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 import reset from './_reset';
 import { media } from './_mediaQueries';
 
