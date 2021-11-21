@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 import { maxDownMediaBreakpoints } from 'styles/_mediaQueries';
 
-export const StyledNav = styled.nav`
+interface NavProps {
+  styledBorder?: string;
+  ref?: any;
+}
+
+export const StyledNav = styled.nav<NavProps>`
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -24,7 +29,7 @@ export const NavMenu = styled.div`
   justify-content: flex-end;
 `;
 
-export const NavMenuItem = styled.div`
+export const NavMenuItem = styled.div<NavProps>`
   padding: 0.25rem 0;
   margin: 0 1rem;
   font-size: 1.25rem;
@@ -33,7 +38,7 @@ export const NavMenuItem = styled.div`
   cursor: pointer;
 
   :hover {
-    border-bottom: 2px solid ${(props) => props.styledBorder};
+    border-bottom: 2px solid ${({ styledBorder }) => styledBorder};
   }
 `;
 

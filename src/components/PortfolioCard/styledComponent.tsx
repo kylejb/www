@@ -2,8 +2,15 @@ import styled, { css } from 'styled-components';
 import { maxDownMediaBreakpoints } from 'styles/_mediaQueries';
 import { perspectiveVal } from 'styles/_variables';
 
+interface CardProps {
+  readonly styledBackgroundColor?: string;
+  readonly styledColor?: string;
+  readonly children?: any;
+  readonly className?: string;
+}
+
 // Helper function to convert pixels to rems (remy)
-const remy = (px) => `${px / 16}rem`;
+const remy = (px: number) => `${px / 16}rem`;
 
 export const CardWrapper = styled.div`
   margin: 20px;
@@ -11,7 +18,7 @@ export const CardWrapper = styled.div`
 `;
 
 // Flipping card
-export const Card = styled.article`
+export const Card = styled.article<CardProps>`
   position: relative;
   width: 100%;
   min-height: ${remy(380)};
@@ -61,7 +68,7 @@ export const CardSide = css`
 `;
 
 // Card side - front
-export const CardFront = styled.div`
+export const CardFront = styled.div<CardProps>`
   background-color: ${({ styledBackgroundColor }) => styledBackgroundColor};
   color: ${({ styledColor }) => styledColor};
   ${CardSide};
@@ -74,7 +81,7 @@ export const CardFront = styled.div`
 `;
 
 // Card side - back
-export const CardBack = styled.div`
+export const CardBack = styled.div<CardProps>`
   background-color: ${({ styledBackgroundColor }) => styledBackgroundColor};
   color: ${({ styledColor }) => styledColor};
   ${CardSide};
@@ -92,7 +99,7 @@ export const CardBack = styled.div`
   }
 `;
 
-export const CardTitle = styled.h2`
+export const CardTitle = styled.h2<CardProps>`
   background-color: ${({ styledBackgroundColor }) => styledBackgroundColor};
   color: ${({ styledColor }) => styledColor};
   font-size: ${remy(21)};
@@ -107,7 +114,7 @@ export const CardTitle = styled.h2`
   `}
 `;
 
-export const CardDescription = styled.span`
+export const CardDescription = styled.span<CardProps>`
   background-color: ${({ styledBackgroundColor }) => styledBackgroundColor};
   color: ${({ styledColor }) => styledColor};
   font-size: ${remy(14)};

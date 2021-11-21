@@ -1,7 +1,8 @@
 import PortfolioCard from 'components/PortfolioCard';
 import { useThemeContext } from 'contexts/theme/ThemeContext';
-import { projects } from './projects';
+
 import { Container, Grid } from './styledComponents';
+import { projects } from './projects';
 
 const PortfolioPage = () => {
   const theme = useThemeContext();
@@ -13,7 +14,6 @@ const PortfolioPage = () => {
     projects.map((project) => (
       <PortfolioCard
         className={project.title}
-        id={project.id}
         project={project}
         key={project.id}
       />

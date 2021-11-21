@@ -3,14 +3,16 @@ import { toElement as scrollToElement } from 'utils/scroll';
 import { ChevronUp } from '@styled-icons/ionicons-outline';
 import { StyledScroll } from './styledScrollToPreviousComponents';
 
-const ScrollToPrevious = (props) => {
+type Props = {
+  pageSelector: string;
+};
+const ScrollToPrevious = ({ pageSelector }: Props) => {
   const theme = useThemeContext();
   const {
     currentTheme: { colorPrimary },
   } = theme;
 
   const scrollToPrevious = () => {
-    const { pageSelector } = props;
     const nextPage = document.querySelector(pageSelector);
     scrollToElement(nextPage);
   };
@@ -18,7 +20,7 @@ const ScrollToPrevious = (props) => {
   return (
     <StyledScroll
       className="scroll-to-previous"
-      onClick={(e) => scrollToPrevious()}
+      onClick={() => scrollToPrevious()}
     >
       <div
         className="arrow"

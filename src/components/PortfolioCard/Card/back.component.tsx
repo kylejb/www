@@ -1,3 +1,4 @@
+import { Project } from 'components/PortfolioPage/projects';
 import Image from 'next/image';
 import {
   CardDescription,
@@ -7,7 +8,11 @@ import {
   CardLinkWrapper,
 } from '../styledComponent';
 
-const PortfolioCardBack = ({ project }) => {
+type Props = {
+  project: Project;
+};
+
+const PortfolioCardBack = ({ project }: Props) => {
   return (
     <>
       <CardTitle className="portfolio-card-content__title">
@@ -27,7 +32,7 @@ const PortfolioCardBack = ({ project }) => {
             key={icon.id}
             target="_blank"
             rel="noopener noreferrer"
-            href={icon.link}
+            href={icon.url}
           >
             <CardIcon className={icon.classname}></CardIcon>
           </CardLink>
@@ -35,13 +40,13 @@ const PortfolioCardBack = ({ project }) => {
       </CardLinkWrapper>
 
       <CardLinkWrapper className="portfolio-card-content__links">
-        {project.github.link.length > 1 ? (
-          project.github.link.map((repo) => (
+        {project.github.links.length > 1 ? (
+          project.github.links.map((repo) => (
             <CardLink
               key={repo.label}
               target="_blank"
               rel="noopener noreferrer"
-              href={repo.link}
+              href={repo.url}
             >
               {repo.label}
             </CardLink>
@@ -50,9 +55,9 @@ const PortfolioCardBack = ({ project }) => {
           <CardLink
             target="_blank"
             rel="noopener noreferrer"
-            href={project.github.link[0]}
+            href={project.github.links[0].url}
           >
-            {project.github.label}
+            {project.github.links[0].label}
           </CardLink>
         )}
       </CardLinkWrapper>

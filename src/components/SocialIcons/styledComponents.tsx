@@ -41,8 +41,8 @@ export const StyledContainer = styled.div`
   }
 `;
 
-export const StyledAnchorTag = styled.a`
-  color: ${(props) => props.themeColor};
+export const StyledAnchorTag = styled.a<{ themeColor?: string }>`
+  color: ${({ themeColor }) => themeColor};
   display: inline-block;
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px transparent;

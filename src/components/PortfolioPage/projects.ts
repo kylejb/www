@@ -1,3 +1,31 @@
+type Link = {
+  url: string;
+  label: string;
+};
+
+type Icon = {
+  id: number | string;
+  type: string;
+  name: string;
+  classname: string;
+  url: string;
+};
+
+type GitHub = {
+  links: Link[];
+};
+
+export interface Project {
+  id: number | string;
+  title: string;
+  desc: string;
+  icons: Icon[];
+  github: {
+    links: Link[];
+  };
+  back_src: string;
+  front_src: string;
+}
 export const projects = [
   {
     id: 1,
@@ -9,19 +37,23 @@ export const projects = [
         type: 'database',
         name: 'SQLite3',
         classname: 'fas fa-database',
-        link: 'https://sqlite.org',
+        url: 'https://sqlite.org',
       },
       {
         id: 2,
         type: 'backend',
         name: 'Ruby',
         classname: 'fas fa-gem',
-        link: 'https://www.ruby-lang.org',
+        url: 'https://www.ruby-lang.org',
       },
     ],
     github: {
-      link: ['https://github.com/kylejb/nyc-mta-station-arrival-feed'],
-      label: 'GitHub',
+      links: [
+        {
+          url: 'https://github.com/kylejb/nyc-mta-station-arrival-feed',
+          label: 'GitHub',
+        },
+      ],
     },
     back_src: '/assets/demos/Commuter.gif',
     front_src: '/assets/images/Commuter.png',
@@ -36,19 +68,23 @@ export const projects = [
         type: 'database',
         name: 'SQLite3',
         classname: 'fas fa-database',
-        link: 'https://sqlite.org',
+        url: 'https://sqlite.org',
       },
       {
         id: 2,
         type: 'backend',
         name: 'Ruby on Rails',
         classname: 'fas fa-gem',
-        link: 'https://rubyonrails.org',
+        url: 'https://rubyonrails.org',
       },
     ],
     github: {
-      link: ['https://github.com/kylejb/JobMate-on-Rails'],
-      label: 'GitHub',
+      links: [
+        {
+          label: 'GitHub',
+          url: 'https://github.com/kylejb/JobMate-on-Rails',
+        },
+      ],
     },
     back_src: '/assets/demos/JobMate_on_Rails.gif',
     front_src: '/assets/images/JobMate_on_Rails.png',
@@ -63,32 +99,32 @@ export const projects = [
         type: 'database',
         name: 'PostgreSQL',
         classname: 'fas fa-database',
-        link: 'https://www.postgresql.org',
+        url: 'https://www.postgresql.org',
       },
       {
         id: 2,
         type: 'backend',
         name: 'Ruby on Rails',
         classname: 'fas fa-gem',
-        link: 'https://rubyonrails.org',
+        url: 'https://rubyonrails.org',
       },
       {
         id: 3,
         type: 'frontend',
         name: 'ReactJS',
         classname: 'fab fa-react',
-        link: 'https://reactjs.org',
+        url: 'https://reactjs.org',
       },
     ],
     github: {
-      link: [
+      links: [
         {
           label: 'GitHub (FE)',
-          link: 'https://github.com/kylejb/clairbuoyant_frontend',
+          url: 'https://github.com/kylejb/clairbuoyant_frontend',
         },
         {
           label: 'GitHub (BE)',
-          link: 'https://github.com/kylejb/capstone-project_backend',
+          url: 'https://github.com/kylejb/capstone-project_backend',
         },
       ],
     },
@@ -105,12 +141,16 @@ export const projects = [
         type: 'frontend',
         name: 'ReactJS',
         classname: 'fab fa-react',
-        link: 'https://reactjs.org',
+        url: 'https://reactjs.org',
       },
     ],
     github: {
-      link: ['https://github.com/kylejb/space-station-tracker'],
-      label: 'Github',
+      links: [
+        {
+          label: 'Github',
+          url: 'https://github.com/kylejb/space-station-tracker',
+        },
+      ],
     },
     back_src: '/assets/images/WIP.jpg',
     front_src: '/assets/images/ISS_Tracker.jpg',

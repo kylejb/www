@@ -3,14 +3,16 @@ import { toElement as scrollToElement } from 'utils/scroll';
 import { ChevronDown } from '@styled-icons/ionicons-outline';
 import { StyledScroll } from './styledScrollToNextComponents';
 
-const ScrollToNext = (props) => {
+type Props = {
+  pageSelector: string;
+};
+const ScrollToNext = ({ pageSelector }: Props) => {
   const theme = useThemeContext();
   const {
     currentTheme: { colorPrimary },
   } = theme;
 
   const scrollToNext = () => {
-    const { pageSelector } = props;
     const nextPage = document.querySelector(pageSelector);
     scrollToElement(nextPage);
   };

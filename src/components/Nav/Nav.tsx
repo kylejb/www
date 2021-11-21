@@ -21,13 +21,13 @@ const Nav = () => {
   const [goingUp, setGoingUp] = useState(false);
 
   const prevScrollY = useRef(0);
-  const nav = useRef();
+  const nav = useRef<HTMLInputElement>();
 
   const stickyStyles = isSticky
     ? { backgroundColor: navAlpha, color: colorPrimary }
     : { backgroundColor: bgPrimary, color: colorPrimary };
 
-  const scrollToPage = (pageSelector) => {
+  const scrollToPage = (pageSelector: string) => {
     const nextPage = document.querySelector(pageSelector);
     scrollToElement(nextPage);
   };
@@ -41,9 +41,9 @@ const Nav = () => {
       if (prevScrollY.current > currentScrollY && !goingUp) {
         setGoingUp(true);
       }
-      const domRect = nav.current.getBoundingClientRect();
+      const domRect = nav.current && nav.current.getBoundingClientRect();
 
-      if (currentScrollY > domRect.height) {
+      if (domRect && currentScrollY > domRect.height) {
         setIsSticky(true);
       } else {
         setIsSticky(false);

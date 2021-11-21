@@ -18,7 +18,7 @@ export const toTop = () => {
   }
 };
 
-export const to = (ycoordinate) => {
+export const to = (ycoordinate: number) => {
   if (isSmoothScrollSupported) {
     window.scroll({
       top: ycoordinate,
@@ -30,7 +30,7 @@ export const to = (ycoordinate) => {
   }
 };
 
-export const toElement = (element) => {
+export const toElement = (element: any) => {
   if (element) {
     if (isSmoothScrollSupported) {
       element.scrollIntoView({

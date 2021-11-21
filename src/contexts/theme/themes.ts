@@ -136,7 +136,7 @@ export const getThemes = () => {
   return themes.map((theme) => {
     return {
       name: theme.name,
-      firstTime: theme.firstTime,
+      firstTime: theme.firstTime || false,
       colorPrimary: theme.colorPrimary,
       colorAlternate: theme.colorAlternate,
       colorHighlight: theme.colorHighlight,

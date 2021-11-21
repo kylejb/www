@@ -1,7 +1,9 @@
-import { ThemeProvider } from '../contexts/theme/ThemeContext';
+import { AppProps } from 'next/app';
 import GlobalStyle from 'styles/globalStyles';
 
-function MyApp({ Component, pageProps }) {
+import { ThemeProvider } from 'contexts/theme/ThemeContext';
+
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <GlobalStyle />

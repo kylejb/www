@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Nav from 'components/Nav';
-
 import LandingPage from 'components/LandingPage';
 import PortfolioPage from 'components/PortfolioPage';
 
@@ -10,7 +9,6 @@ export default function Home() {
       <Head>
         <title>kyleburda</title>
       </Head>
-
       <Nav />
       <LandingPage />
       <PortfolioPage />

@@ -1,7 +1,12 @@
+import { Project } from 'components/PortfolioPage/projects';
 import Image from 'next/image';
 import { CardDescription, CardTitle } from '../styledComponent';
 
-const ImageCard = ({ projectImgSrc }) => {
+type ImageCardProps = {
+  projectImgSrc: string;
+};
+
+const ImageCard = ({ projectImgSrc }: ImageCardProps) => {
   return (
     <Image
       src={projectImgSrc}
@@ -12,7 +17,11 @@ const ImageCard = ({ projectImgSrc }) => {
   );
 };
 
-const PortfolioCardFront = ({ project }) => {
+type Props = {
+  project: Project;
+};
+
+const PortfolioCardFront = ({ project }: Props) => {
   return (
     <>
       <CardTitle>{project.title}</CardTitle>
