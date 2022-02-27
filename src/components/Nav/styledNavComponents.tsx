@@ -15,31 +15,11 @@ export const StyledNav = styled.nav<NavProps>`
   height: 3rem;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
 
   ${maxDownMediaBreakpoints.mobileL`
     height: 4rem;
   `}
-`;
-
-export const NavMenu = styled.div`
-  margin-right: 1rem;
-  display: flex;
-  flex: 1;
-  justify-content: flex-end;
-`;
-
-export const NavMenuItem = styled.div<NavProps>`
-  padding: 0.25rem 0;
-  margin: 0 1rem;
-  font-size: 1.25rem;
-  font-weight: 400;
-  border-bottom: 2px solid transparent;
-  cursor: pointer;
-
-  :hover {
-    border-bottom: 2px solid ${({ styledBorder }) => styledBorder};
-  }
 `;
 
 export const ThemeWand = styled.div`

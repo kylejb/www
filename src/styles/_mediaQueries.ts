@@ -1,4 +1,5 @@
 import { mediaQuery } from 'utils/mediaQuery';
+
 import { breakpoints } from './_variables';
 
 export const media = {

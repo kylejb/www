@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
-import reset from './_reset';
+
 import { media } from './_mediaQueries';
+import reset from './_reset';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -74,6 +75,7 @@ const GlobalStyle = createGlobalStyle`
   ul {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+    overflow: hidden;
   }
 
   h1 {

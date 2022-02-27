@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
+
 import { getThemes } from './themes';
 
 type CurrentTheme = {
@@ -21,22 +22,6 @@ interface IThemeContext {
   currentTheme: CurrentTheme;
   switchTheme: () => void;
 }
-
-// const defaultTheme = {
-//   name: 'material-brown',
-//   firstTime: true,
-//   colorPrimary: '#845c4e',
-//   colorAlternate: '#FFFFFF',
-//   colorHighlight: '#eee6e3',
-//   bgPrimary: '#FFFFFF',
-//   bgAlternate: '#845c4e',
-//   bgLanding: '#845c4e',
-//   textPrimary: '#212121',
-//   textAlternate: '#FFFFFF',
-//   textLanding: '#845c4e',
-//   parallaxStars: '#845c4e',
-//   navAlpha: 'rgba(255, 255, 255, 0.75)',
-// };
 
 function createCtx<A extends {} | null>() {
   const ctx = createContext<A | undefined>(undefined);

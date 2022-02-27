@@ -1,17 +1,16 @@
 import Head from 'next/head';
-import Nav from 'components/Nav';
+
 import LandingPage from 'components/LandingPage';
-import PortfolioPage from 'components/PortfolioPage';
+import Nav from 'components/Nav';
 
 export default function Home() {
   return (
     <div>
       <Head>
-        <title>kyleburda</title>
+        <title>Kyle Burda</title>
       </Head>
       <Nav />
       <LandingPage />
-      <PortfolioPage />
     </div>
   );
 }

@@ -1,6 +1,8 @@
 import Script from 'next/script';
-import { useThemeContext } from 'contexts/theme/ThemeContext';
+
 import SocialIcons from 'components/SocialIcons/index';
+import { useThemeContext } from 'contexts/theme/ThemeContext';
+
 import { Container } from './styledComponents';
 
 const LandingPage = () => {
@@ -17,9 +19,9 @@ const LandingPage = () => {
       ></Script>
       <main style={{ color: colorPrimary }}>
         <div className="intro-wrapper">
-          <div className="intro-name">{"Hello, I'm Kyle!"}</div>
+          <div className="intro-name">Hello, I'm Kyle!</div>
           <div className="tagline">
-            Full Stack Dev | Open-Source Enthusiast | Blogger | Avid Surfer
+            Software Engineer | Open-Source Enthusiast | Avid Surfer
           </div>
           <SocialIcons />
         </div>

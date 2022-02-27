@@ -1,16 +1,14 @@
 import styled from 'styled-components';
+
 import { maxDownMediaBreakpoints } from 'styles/_mediaQueries';
 
 export const Container = styled.div`
   min-height: 100vh;
   display: flex;
-  flex: 0 1 auto;
-  flex-direction: column;
   justify-content: center;
 
   main {
     display: flex;
-    flex: 1 0 auto;
     flex-direction: column;
     justify-content: center;
     padding: 3.25rem 1.5rem 1rem;

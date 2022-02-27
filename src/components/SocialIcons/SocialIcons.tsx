@@ -1,4 +1,5 @@
 import { useThemeContext } from 'contexts/theme/ThemeContext';
+
 import { StyledContainer, StyledAnchorTag } from './styledComponents';
 
 const SocialIcon = () => {
@@ -26,15 +27,6 @@ const SocialIcon = () => {
         themeColor={colorPrimary}
       >
         <i className="fab fa-twitter"></i>
-      </StyledAnchorTag>
-      <StyledAnchorTag
-        id="stackoverflow-icon"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://stackoverflow.com/story/kylejb"
-        themeColor={colorPrimary}
-      >
-        <i className="fab fa-stack-overflow"></i>
       </StyledAnchorTag>
       <StyledAnchorTag
         id="linkedin-icon"

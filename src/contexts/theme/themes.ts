@@ -1,7 +1,6 @@
 export const themes = [
   {
     name: 'blue',
-    firstTime: true,
     colorPrimary: '#4ea9da',
     colorAlternate: '#FAFAFA',
     colorHighlight: '#daedf7',
@@ -10,7 +9,6 @@ export const themes = [
   },
   {
     name: 'cyan',
-    firstTime: true,
     colorPrimary: '#3dc0b0',
     colorAlternate: '#FAFAFA',
     colorHighlight: '#d7f2ef',
@@ -99,6 +97,7 @@ export const themes = [
   },
   {
     name: 'material-cyan',
+    firstTime: true,
     colorPrimary: '#00BCD4',
     colorAlternate: '#FFFFFF',
     colorHighlight: '#d4faff',
@@ -107,6 +106,7 @@ export const themes = [
   },
   {
     name: 'material-brown',
+    firstTime: true,
     colorPrimary: '#845c4e',
     colorAlternate: '#FFFFFF',
     colorHighlight: '#eee6e3',
