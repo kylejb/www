@@ -2,6 +2,9 @@ import styled from 'styled-components';
 import { maxDownMediaBreakpoints } from 'styles/_mediaQueries';
 
 export const StyledContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.25rem 0;
   font-size: 3rem;
 
@@ -11,18 +14,6 @@ export const StyledContainer = styled.div`
 
   a {
     padding: 0 0.625rem;
-
-    &#devto-icon svg {
-      margin-bottom: -0.25rem;
-      width: 2.7rem;
-      height: 2.7rem;
-
-      ${maxDownMediaBreakpoints.mobileL`
-        margin-bottom: -0.225rem;
-        width: 2.25rem;
-        height: 2.25rem;
-      `}
-    }
   }
 
   @keyframes icon-wobble {

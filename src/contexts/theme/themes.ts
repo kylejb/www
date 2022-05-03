@@ -97,7 +97,6 @@ export const themes = [
   },
   {
     name: 'material-cyan',
-    firstTime: true,
     colorPrimary: '#00BCD4',
     colorAlternate: '#FFFFFF',
     colorHighlight: '#d4faff',
@@ -106,7 +105,6 @@ export const themes = [
   },
   {
     name: 'material-brown',
-    firstTime: true,
     colorPrimary: '#845c4e',
     colorAlternate: '#FFFFFF',
     colorHighlight: '#eee6e3',
@@ -115,7 +113,6 @@ export const themes = [
   },
   {
     name: 'material-grey',
-    firstTime: true,
     colorPrimary: '#607D8B',
     colorAlternate: '#FFFFFF',
     colorHighlight: '#dfe6e9',
@@ -124,6 +121,7 @@ export const themes = [
   },
   {
     name: 'material-grey-alt',
+    firstTime: true,
     colorPrimary: '#FFFFFF',
     colorAlternate: '#455A64',
     colorHighlight: '#374850',
