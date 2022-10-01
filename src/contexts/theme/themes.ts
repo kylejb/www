@@ -5,7 +5,6 @@ export const themes = [
     colorAlternate: '#FAFAFA',
     colorHighlight: '#daedf7',
     textPrimary: '#202121',
-    navAlpha: 'rgba(250, 250, 250, 0.75)',
   },
   {
     name: 'cyan',
@@ -13,7 +12,6 @@ export const themes = [
     colorAlternate: '#FAFAFA',
     colorHighlight: '#d7f2ef',
     textPrimary: '#202121',
-    navAlpha: 'rgba(250, 250, 250, 0.75)',
   },
   {
     name: 'blue-alt',
@@ -21,7 +19,6 @@ export const themes = [
     colorAlternate: '#4ea9da',
     colorHighlight: '#2a93cb',
     textPrimary: '#FAFAFA',
-    navAlpha: 'rgba(78, 169, 218, 0.75)',
   },
   {
     name: 'cyan-alt',
@@ -29,7 +26,6 @@ export const themes = [
     colorAlternate: '#3dc0b0',
     colorHighlight: '#35a698',
     textPrimary: '#FAFAFA',
-    navAlpha: 'rgba(61, 192, 176, 0.75)',
   },
   {
     name: 'green',
@@ -37,7 +33,6 @@ export const themes = [
     colorAlternate: '#FAFAFA',
     colorHighlight: '#e1efdf',
     textPrimary: '#202121',
-    navAlpha: 'rgba(250, 250, 250, 0.75)',
   },
   {
     name: 'brown',
@@ -45,7 +40,6 @@ export const themes = [
     colorAlternate: '#FAFAFA',
     colorHighlight: '#f5ebe2',
     textPrimary: '#202121',
-    navAlpha: 'rgba(250, 250, 250, 0.75)',
   },
   {
     name: 'orange',
@@ -53,7 +47,6 @@ export const themes = [
     colorAlternate: '#FAFAFA',
     colorHighlight: '#f9e4d5',
     textPrimary: '#202121',
-    navAlpha: 'rgba(250, 250, 250, 0.75)',
   },
   {
     name: 'crimson-red',
@@ -61,7 +54,6 @@ export const themes = [
     colorAlternate: '#FAFAFA',
     colorHighlight: '#fbe4e4',
     textPrimary: '#202121',
-    navAlpha: 'rgba(250, 250, 250, 0.75)',
   },
   {
     name: 'red',
@@ -69,7 +61,6 @@ export const themes = [
     colorAlternate: '#FAFAFA',
     colorHighlight: '#f6e4e7',
     textPrimary: '#202121',
-    navAlpha: 'rgba(250, 250, 250, 0.75)',
   },
   {
     name: 'red-alt',
@@ -77,7 +68,6 @@ export const themes = [
     colorAlternate: '#89303d',
     colorHighlight: '#63232c',
     textPrimary: '#FFFFFF',
-    navAlpha: 'rgba(137, 48, 61, 0.75)',
   },
   {
     name: 'indigo-alt',
@@ -85,7 +75,6 @@ export const themes = [
     colorAlternate: '#303F9F',
     colorHighlight: '#242f78',
     textPrimary: '#FAFAFA',
-    navAlpha: 'rgba(48, 63, 159, 0.75)',
   },
   {
     name: 'grey-alt',
@@ -93,7 +82,6 @@ export const themes = [
     colorAlternate: '#485564',
     colorHighlight: '#333c46',
     textPrimary: '#FFFFFF',
-    navAlpha: 'rgba(72, 85, 100, 0.75)',
   },
   {
     name: 'material-cyan',
@@ -101,7 +89,6 @@ export const themes = [
     colorAlternate: '#FFFFFF',
     colorHighlight: '#d4faff',
     textPrimary: '#212121',
-    navAlpha: 'rgba(255, 255, 255, 0.75)',
   },
   {
     name: 'material-brown',
@@ -109,7 +96,6 @@ export const themes = [
     colorAlternate: '#FFFFFF',
     colorHighlight: '#eee6e3',
     textPrimary: '#212121',
-    navAlpha: 'rgba(255, 255, 255, 0.75)',
   },
   {
     name: 'material-grey',
@@ -117,7 +103,6 @@ export const themes = [
     colorAlternate: '#FFFFFF',
     colorHighlight: '#dfe6e9',
     textPrimary: '#212121',
-    navAlpha: 'rgba(255, 255, 255, 0.75)',
   },
   {
     name: 'material-grey-alt',
@@ -126,7 +111,6 @@ export const themes = [
     colorAlternate: '#455A64',
     colorHighlight: '#374850',
     textPrimary: '#FAFAFA',
-    navAlpha: 'rgba(69, 90, 100, 0.75)',
   },
 ];
 
@@ -145,7 +129,6 @@ export const getThemes = () => {
       textAlternate: theme.colorAlternate,
       textLanding: theme.colorPrimary,
       parallaxStars: theme.colorPrimary,
-      navAlpha: theme.navAlpha,
     };
   });
 };
