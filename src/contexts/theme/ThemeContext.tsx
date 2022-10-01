@@ -15,7 +15,6 @@ type CurrentTheme = {
   textAlternate: string;
   textLanding: string;
   parallaxStars: string;
-  navAlpha: string;
 };
 
 interface IThemeContext {

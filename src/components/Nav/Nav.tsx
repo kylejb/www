@@ -1,23 +1,23 @@
 import { Dice } from '@styled-icons/ionicons-solid/Dice';
-import { useRef } from 'react';
 
-import { useThemeContext } from 'contexts/theme/ThemeContext';
+import { useThemeContext } from 'contexts/theme';
 
 import { StyledNav, ThemeWand, ThemeWandContent } from './styledNavComponents';
 
 const Nav = () => {
   const theme = useThemeContext();
   const {
-    currentTheme: { colorPrimary, bgPrimary, navAlpha },
+    currentTheme: { colorPrimary, bgPrimary },
     switchTheme,
   } = theme;
 
-  const nav = useRef<HTMLInputElement>();
-
-  const stickyStyles = { backgroundColor: bgPrimary, color: colorPrimary };
+  const stickyStyles = {
+    backgroundColor: bgPrimary,
+    color: colorPrimary,
+  };
 
   return (
-    <StyledNav ref={nav} style={stickyStyles}>
+    <StyledNav style={stickyStyles}>
       <ThemeWand onClick={switchTheme}>
         <Dice size="25" />
         <ThemeWandContent>Recolor</ThemeWandContent>

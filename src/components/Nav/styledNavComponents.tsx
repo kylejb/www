@@ -1,9 +1,9 @@
 import styled from 'styled-components';
+
 import { maxDownMediaBreakpoints } from 'styles/_mediaQueries';
 
 interface NavProps {
   styledBorder?: string;
-  ref?: any;
 }
 
 export const StyledNav = styled.nav<NavProps>`

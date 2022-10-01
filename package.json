@@ -1,15 +1,6 @@
 {
-    "version": "2.2.2",
+    "version": "2.2.3",
     "private": true,
-    "dependencies": {
-        "@styled-icons/ionicons-outline": "^10.34.0",
-        "@styled-icons/ionicons-solid": "^10.34.0",
-        "next": "^12.1.6",
-        "react": "^18.1.0",
-        "react-dom": "^18.1.0",
-        "simple-icons": "^6.20.0",
-        "styled-components": "^5.3.5"
-    },
     "scripts": {
         "dev": "next dev",
         "build": "next build",
@@ -18,14 +9,22 @@
         "format": "prettier --write .",
         "type-check": "tsc --pretty --noEmit"
     },
+    "dependencies": {
+        "@styled-icons/ionicons-solid": "^10.46.0",
+        "next": "^12.3.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "simple-icons": "^7.13.0",
+        "styled-components": "^5.3.6"
+    },
     "devDependencies": {
-        "@types/node": "^17.0.31",
-        "@types/react": "^18.0.8",
-        "@types/styled-components": "^5.1.25",
-        "eslint": "^8.14.0",
-        "eslint-config-next": "^12.1.6",
-        "prettier": "^2.6.2",
-        "react-is": "^18.1.0",
-        "typescript": "^4.6.4"
+        "@types/node": "^18.7.23",
+        "@types/react": "^18.0.21",
+        "@types/styled-components": "^5.1.26",
+        "eslint": "^8.24.0",
+        "eslint-config-next": "^12.3.1",
+        "prettier": "^2.7.1",
+        "react-is": "^18.2.0",
+        "typescript": "^4.8.4"
     }
 }
