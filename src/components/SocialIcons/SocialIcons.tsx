@@ -1,9 +1,4 @@
-import {
-  siDevdotto,
-  siGithub,
-  siLinkedin,
-  siTwitter,
-} from 'simple-icons/icons';
+import { siDevdotto, siGithub, siLinkedin, siTwitter } from 'simple-icons';
 
 import Icon from './Icon';
 import { StyledContainer, StyledAnchorTag } from './styledComponents';
