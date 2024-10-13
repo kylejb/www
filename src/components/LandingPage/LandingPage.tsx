@@ -15,7 +15,7 @@ const LandingPage = () => {
         <div className="intro-wrapper">
           <div className="intro-name">Hello, I&apos;m Kyle!</div>
           <div className="tagline">
-            Software Engineer | Open-Source Enthusiast | Avid Surfer
+            Software Engineer | Open-Source Contributor | Surfer
           </div>
           <SocialIcons />
         </div>
