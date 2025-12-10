@@ -17,22 +17,18 @@ const ascii = `
                                                                                                ░░░░░░
 `;
 
-function MyApp({ Component, pageProps }: AppProps) {
-  const disableConsoleLog = () => {
-    console.log(
-      `%c ${ascii}`,
-      'background: #212121; color: #594A7D; padding: 6px;'
-    );
-    console.log = () => {};
-  };
+console.log(
+  `%c ${ascii}`,
+  'background: #212121; color: #594A7D; padding: 6px;',
+);
 
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <GlobalStyle />
       <ThemeProvider>
         <Component {...pageProps} />
       </ThemeProvider>
-      {disableConsoleLog()}
     </>
   );
 }

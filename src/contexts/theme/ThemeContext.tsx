@@ -40,12 +40,12 @@ type ThemeProviderProps = {
   children: ReactNode;
 };
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-  const firstTimeThemes = getThemes().filter(
+  const [currentTheme, setCurrentTheme] = useState<CurrentTheme>(() => {
+    const firstTimeThemes = getThemes().filter(
       (theme) => theme.firstTime === true
-    ),
-    setFirstTimeTheme =
-      firstTimeThemes[Math.floor(Math.random() * firstTimeThemes.length)];
-  const [currentTheme, setCurrentTheme] = useState(setFirstTimeTheme);
+    );
+    return firstTimeThemes[Math.floor(Math.random() * firstTimeThemes.length)];
+  });
 
   const getRandomTheme = () => {
     const allThemes = getThemes();
